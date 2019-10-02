@@ -1,0 +1,195 @@
+
+<div class="mainWrap">
+
+  <!--  date inputs  -->
+
+  <div class="dateInputsWrap">
+    <div class="dateInput">
+      <div class="calendal">
+        <img src="assets/images/calendar.png" alt="alt">
+      </div>
+      <input type="text" placeholder="25/06/2019">
+    </div>
+    <div class="sep">—</div>
+    <div class="dateInput">
+      <div class="calendal">
+        <img src="assets/images/calendar.png" alt="alt">
+      </div>
+      <input type="text" placeholder="25/06/2019">
+    </div>
+  </div>
+
+  <!--  /date inputs  -->
+
+  <!--  processed  -->
+
+  <div class="processedWrap">
+    <img src="assets/images/close.png" alt="aclt" class="close">
+    <img src="assets/images/Report.png" alt="alt" class="decor">
+    <div class="text">Обработано 100% документов до <span>03.07.2019</span></div>
+  </div>
+
+  <!--  /processed  -->
+
+  <!--  main tabs  -->
+
+  <div class="mainTabs">
+
+    <div class="tab"  [routerLink]="['/manager1']">
+      <div class="tabHeader">
+        <div class="imgHolder">
+          <img src="assets/images/video.png" alt="alt">
+        </div>
+        <div class="text">Не просмотренные видео</div>
+      </div>
+
+      <div class="num">399</div>
+
+      <div class="desc">Новых видео</div>
+    </div>
+
+    <div class="tab" [routerLink]="['/manager2']">
+      <div class="tabHeader">
+        <div class="imgHolder">
+          <img src="assets/images/tabImg2.png" alt="alt">
+        </div>
+        <div class="text">Статистика станции</div>
+      </div>
+
+      <div class="num">2,5%</div>
+
+      <div class="desc">Изменения в рейтинге</div>
+    </div>
+
+    <div class="tab activeTab" [routerLink]="['/manager3']">
+      <div class="tabHeader">
+        <div class="imgHolder">
+          <img src="assets/images/tabImg3.png" alt="alt">
+        </div>
+        <div class="text">Рейтинг</div>
+      </div>
+
+      <div class="num">5<sup>+2</sup></div>
+
+      <div class="desc">Изменения статистики</div>
+    </div>
+
+    <div class="tab" [routerLink]="['/manager4']">
+      <div class="tabHeader">
+        <div class="imgHolder">
+          <img src="assets/images/tabImg4.png" alt="alt">
+        </div>
+        <div class="text">Чеклист</div>
+      </div>
+
+      <div class="num">
+        <img src="assets/images/Report.png" alt="alt">
+      </div>
+
+      <div class="desc">Есть изменеия в чеклисте</div>
+    </div>
+  </div>
+
+  <!--  /main tabs  -->
+
+  <!--  inner tab  -->
+
+  <div class="innerTab innerTab3">
+    <div class="tableWrap">
+
+      <div class="head">
+        <div class="name">Статистика станций</div>
+        <div class="filtersWrap">
+          <div class="filter">
+            <div class="value">KPI</div>
+            <img src="assets/images/filterArrow.png" alt="alt">
+          </div>
+          <div class="filter">
+            <div class="value">Оператор</div>
+            <img src="assets/images/filterArrow.png" alt="alt">
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <td class="id">1</td>
+          <td>
+            <div class="graf">
+              <img src="assets/images/greenArrow.png" alt="alt">
+              <div class="num">8</div>
+            </div>
+          </td>
+          <td>33086</td>
+          <td>VOLCHANSKAYA</td>
+          <td>
+            <div class="perc">95%
+              <div class="sup green">+4%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="id">2</td>
+          <td>
+            <div class="graf">
+              <img src="assets/images/greenArrow.png" alt="alt">
+              <div class="num">8</div>
+            </div>
+          </td>
+          <td>33086</td>
+          <td>VOLCHANSKAYA</td>
+          <td>
+            <div class="perc">95%
+              <div class="sup green">+4%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="id">3</td>
+          <td>
+            <div class="graf">
+              <div class="num">8</div>
+              <img src="assets/images/redArrow.png" alt="alt">
+            </div>
+          </td>
+          <td>33086</td>
+          <td>VOLCHANSKAYA</td>
+          <td>
+            <div class="perc red">43%
+              <div class="sup red">-4%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="id">4</td>
+          <td>
+            <div class="graf">
+              <div class="num">8</div>
+              <img src="assets/images/redArrow.png" alt="alt">
+            </div>
+          </td>
+          <td>33086</td>
+          <td>VOLCHANSKAYA</td>
+          <td>
+            <div class="perc red">40%
+              <div class="sup red">-4%</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="plateWrap">
+      <div class="plate">
+        <div class="center">5 <div class="plus">+2</div></div>
+        <div class="bottom">место</div>
+      </div>
+      <div class="plate">
+        <div class="center">1,5%</div>
+        <div class="bottom">динамика</div>
+      </div>
+    </div>
+  </div>
+
+  <!--  /inner tab  -->
+
+</div>

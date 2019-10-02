@@ -1,20 +1,97 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- header -->
 
+<div class="header">
+  <div class="cabinet">
+    <img src="assets/images/cabImg.png" alt="alt">
+    <div class="text">Кабинет</div>
+  </div>
+  <div class="menu">
+    <div class="burger">
+      <img src="assets/images/burger.png" alt="alt">
+    </div>
+    <div class="menuHolder">
+      <div class="langWrap">
+        <div class="current">English</div>
+        <img src="assets/images/arrowDown.png" alt="alt">
+
+        <div class="dropWrap langDrop">
+          <div class="item">English</div>
+          <div class="item">Chinese</div>
+          <div class="item">Japanese</div>
+          <div class="item">French</div>
+          <div class="item">Spanish</div>
+        </div>
+      </div>
+
+      <div class="userWrap">
+        <div class="avaWrap">
+          <img src="assets/images/user.png" alt="alt">
+          <div class="online"></div>
+        </div>
+
+        <div class="dropWrap userDrop">
+          <div class="item">Settings</div>
+          <div class="item">Profile</div>
+          <div class="item">Help</div>
+          <div class="line"></div>
+          <div class="item">Logout</div>
+        </div>
+      </div>
+
+      <div class="noticeWrap">
+        <div class="noticeHolder">
+          <img src="assets/images/Notifications.png" alt="alt">
+          <div class="alert">5</div>
+        </div>
+
+        <div class="dropWrap noticeDrop">
+          <div class="mainTitle">
+            <div class="text">NOTIFICATIONS</div>
+            <div class="total">New 5</div>
+          </div>
+          <div class="noticeList">
+            <div class="singleNotice">
+              <div class="circle red"></div>
+              <div class="about">
+                <div class="title">New order has been placed.</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="singleNotice">
+              <div class="circle green"></div>
+              <div class="about">
+                <div class="title">Completed the task</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="singleNotice">
+              <div class="circle grey"></div>
+              <div class="about">
+                <div class="title">Completed the task</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="messageWrap">
+        <img src="assets/images/Message.png" alt="alt">
+      </div>
+
+      <div class="chatWrap">
+        <img src="assets/images/Chart.png" alt="aclt">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- header -->
+
+<!-- manager -->
+
+<router-outlet></router-outlet>
+
+<!-- manager -->

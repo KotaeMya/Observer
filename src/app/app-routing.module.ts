@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'manager1', pathMatch: 'full'}
+  { path: '', redirectTo: 'manager4', pathMatch: 'full'}
 ]
 
 @NgModule({
