@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'manager4', pathMatch: 'full'}
+  { path: '', redirectTo: 'top1', pathMatch: 'full' }/*,
+  { path: 'manager', redirectTo: 'manager1', pathMatch: 'full'},
+  { path: 'territorial', redirectTo: 'territorial1', pathMatch: 'full'},
+  { path: 'top', redirectTo: 'top1', pathMatch: 'full'}*/
 ]
 
 @NgModule({

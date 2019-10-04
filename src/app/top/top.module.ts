@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopComponent } from './top.component';
+
+import { Top1Component } from './top1/top1.component';
+import { Top2Component } from './top2/top2.component';
+import { TopRoutingModule } from './top-routing.module';
 
 
 
 @NgModule({
-  declarations: [TopComponent],
+  declarations: [
+    Top1Component,
+    Top2Component
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    TopRoutingModule
   ]
 })
 export class TopModule { }

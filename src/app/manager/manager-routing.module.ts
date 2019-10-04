@@ -9,14 +9,14 @@ import { Manager3Component } from './manager3/manager3.component';
 import { Manager4Component } from './manager4/manager4.component';
 
 const routes: Routes = [
-  { path: '', component: ManagerComponent, children: [
-      { path: 'manager1', component: Manager1Component },
-      { path: 'manager2', component: Manager2Component },
-      { path: 'manager3', component: Manager3Component },
-      { path: 'manager4', component: Manager4Component }
-    ]
-  }
-]
+    { path: '', component: ManagerComponent, children: [
+        { path: 'manager1', component: Manager1Component },
+        { path: 'manager2', component: Manager2Component },
+        { path: 'manager3', component: Manager3Component },
+        { path: 'manager4', component: Manager4Component }
+      ]
+    }
+  ]
 
 @NgModule({
   declarations: [],
