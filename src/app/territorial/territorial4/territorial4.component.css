@@ -1,4 +1,3 @@
-
 .mainWrap {
   width: -webkit-calc(100% - 290px);
   width: calc(100% - 290px);
@@ -60,6 +59,138 @@
   border-radius: 0 4px 4px 0;
   padding: 0 14px; }
 
+/*
+
+MAIN TABS
+
+*/
+.mainTabs {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+.mainTabs .tab {
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
+  height: 165px;
+  width: 23.5%;
+  background: #ffffff;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+.mainTabs .tab:hover {
+  background: #37474f;
+  color: #ffffff; }
+.mainTabs .tab:hover .tabHeader .text {
+  color: #ffffff; }
+.mainTabs .tab:hover .num {
+  color: #ffffff; }
+.mainTabs .tab .tabHeader {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 12px; }
+.mainTabs .tab .tabHeader .imgHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fed300;
+  margin-right: 13px;
+  width: 40px;
+  height: 40px; }
+.mainTabs .tab .tabHeader .text {
+  width: -webkit-calc(100% - 53px);
+  width: calc(100% - 53px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #37474f;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+.mainTabs .tab .num {
+  color: #37474f;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 15px auto; }
+.mainTabs .tab .num sup {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: -23px;
+  padding: 4px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  height: 15px;
+  background: #46be8a;
+  color: #ffffff; }
+.mainTabs .tab .num img {
+  margin: auto;
+  width: 41px; }
+.mainTabs .tab .desc {
+  color: #a3afb7;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif; }
+.mainTabs .activeTab {
+  background: #37474f;
+  color: #ffffff; }
+.mainTabs .activeTab .tabHeader .text {
+  color: #ffffff; }
+.mainTabs .activeTab .num {
+  color: #ffffff; }
 
 .innerTab {
   width: 100%;
@@ -197,24 +328,14 @@
 
 /*
 
-INNER TAB FILTERS
+CHECKLIST
 
 */
-.filtersWrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-.filtersWrap .filter {
-  margin-right: 30px;
+.innerTab4 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+.innerTab4 .topPlate {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,97 +348,16 @@ INNER TAB FILTERS
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9eaeb; }
+.innerTab4 .topPlate .singlePlate {
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  width: 142px;
-  height: 40px;
-  background: #e4eaec;
-  padding: 0 20px;
-  cursor: pointer;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 100;
-  color: #808a92;
-  z-index: 10;
-  position: relative; }
-.filtersWrap .filter:last-child {
-  margin-right: 0; }
-
-
-/*
-
-MULTI TABS
-
-*/
-.multiTabsWrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%; }
-.multiTabsWrap .multiTab {
-  width: 15%;
-  padding: 20px 20px 45px 20px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background: #f1f4f5;
-  border: 2px solid #f1f4f5;
-  cursor: pointer;
+  height: 164px;
+  width: 32%;
+  background: #e8f1f8;
   position: relative;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease; }
-.multiTabsWrap .multiTab:hover {
-  background: #ffffff;
-  border: 2px solid #fed300; }
-.multiTabsWrap .multiTab .top {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  width: 100%; }
-.multiTabsWrap .multiTab .top .text {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 11px;
-  color: #37474f;
-  padding-left: 15px;
-  text-transform: uppercase; }
-.multiTabsWrap .multiTab .progressBar {
-  position: absolute;
-  width: -webkit-calc(100% - 40px);
-  width: calc(100% - 40px);
-  left: 20px;
-  bottom: 33px;
-  height: 2px;
-  background: #37474f; }
-.multiTabsWrap .multiTab .progressBar .progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: #46be8a; }
-.multiTabsWrap .multiTab .numsWrap {
-  position: absolute;
-  width: -webkit-calc(100% - 40px);
-  width: calc(100% - 40px);
-  left: 20px;
-  bottom: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -330,28 +370,24 @@ MULTI TABS
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
-.multiTabsWrap .multiTab .numsWrap .num {
+.innerTab4 .topPlate .singlePlate .closePlate {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer; }
+.innerTab4 .topPlate .singlePlate .text {
+  letter-spacing: 1px;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: #37474f; }
-.multiTabsWrap .multiTab .numsWrap img {
-  margin-right: 10px; }
-.multiTabsWrap .multiTabActive {
-  background: #ffffff;
-  border: 2px solid #fed300; }
-
-
-/*
-
-MULTI INNER
-
-*/
-.innerTab2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
-.multiInner {
-  width: 100%;
+  font-weight: 400;
+  color: #62a8ea;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5; }
+@media screen and (max-width: 1680px) {
+  .innerTab4 .topPlate .singlePlate .text {
+    font-size: 10px; } }
+.innerTab4 .bottomPlate {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -364,27 +400,11 @@ MULTI INNER
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: 100%;
   padding-top: 30px; }
-.multiInner .tableWrap {
-  width: 49%; }
-.multiInner .tableWrap .head {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-.multiInner .tableWrap .head .name {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #474e54;
+.innerTab4 .bottomPlate .selectWrap {
+  width: 32%; }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .inner {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -396,80 +416,27 @@ MULTI INNER
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
-  justify-content: flex-start; }
-.multiInner .tableWrap .head .name img {
-  margin-right: 10px; }
-.multiInner .tableWrap table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "Open Sans", sans-serif;
-  color: #37474f;
-  font-size: 14px; }
-.multiInner .tableWrap table tr {
-  border-top: 1px solid #e9eaeb;
-  border-bottom: 1px solid #e9eaeb; }
-.multiInner .tableWrap table tr:nth-child(odd) {
-  background: #f3f7f9; }
-.multiInner .tableWrap table tr td {
-  padding: 20px 0; }
-.multiInner .tableWrap table tr td:nth-child(1) {
-  width: 68%;
-  padding-left: 30px;
-  text-align: left; }
-.multiInner .tableWrap table tr td:nth-child(2) {
-  width: 8%;
-  text-align: left; }
-.multiInner .tableWrap table tr td:nth-child(3) {
-  width: 24%;
-  position: relative; }
-.multiInner .tableWrap table tr td:nth-child(3) img {
-  width: 83%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-.multiInner .tableWrap table tr .red {
-  color: #e41b13; }
-.multiInner .tableWrap table tr .blue {
-  color: #62a8ea; }
-.multiInner .curveWrap {
-  width: 49%;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #474e54; }
-.multiInner .curveWrap .title {
+  justify-content: flex-start;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #e4eaec;
+  cursor: pointer;
+  height: 50px;
+  margin-bottom: 5px;
+  padding-left: 20px; }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .inner img {
+  margin-right: 15px; }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .inner .text {
   text-transform: uppercase;
-  height: 40px;
-  margin-bottom: 33px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
-.multiInner .curveWrap .desc {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
   color: #76838f;
-  margin-top: 40px; }
-.multiInner .curveWrap img {
+  letter-spacing: 1px; }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .selectDrop {
+  padding-left: 40px; }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .selectDrop .dropItem {
   width: 100%;
-  height: auto; }
-
-
-/*
-
-TERRITORIAL 2
-
-*/
-.territorial2Inner .tableWrap .head .name {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -481,36 +448,59 @@ TERRITORIAL 2
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
-  justify-content: flex-start; }
-.territorial2Inner .tableWrap .head .name img {
-  margin-right: 10px; }
+  justify-content: flex-start;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #e4eaec;
+  cursor: pointer;
+  height: 50px;
+  margin-bottom: 5px;
+  padding-left: 30px;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #76838f;
+  letter-spacing: 1px; }
+@media screen and (max-width: 1680px) {
+  .innerTab4 .bottomPlate .selectWrap .singleSelect .selectDrop .dropItem {
+    font-size: 12px; } }
+.innerTab4 .bottomPlate .selectWrap .singleSelect .selectDrop .dropItemActive {
+  font-weight: 600;
+  color: #37474f;
+  border: 2px solid #fed300; }
+.innerTab4 .bottomPlate .aboutTextWrap {
+  width: 66%;
+  color: #37474f;
+  font-family: "Open Sans", sans-serif; }
+.innerTab4 .bottomPlate .aboutTextWrap .title {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 30px; }
+.innerTab4 .bottomPlate .aboutTextWrap .subtitle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 20px; }
+.innerTab4 .bottomPlate .aboutTextWrap .subtitle .text {
+  padding-left: 3px;
+  width: -webkit-calc(100% - 8px);
+  width: calc(100% - 8px);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1; }
+.innerTab4 .bottomPlate .aboutTextWrap .desc {
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 30px; }
 
-.territorial2Inner .tableWrap .curveWrap {
-  width: 100%; }
-.territorial2Inner .tableWrap .curveWrap .title {
-  margin-top: 30px; }
-
-.territorial2Inner .tableWrap:last-child table tr td {
-  padding: 20px 0; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(1) {
-  width: 86% !important;
-  text-align: left !important;
-  padding-left: 30px; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) {
-  width: 14% !important; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) .perc {
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) .perc .sup {
-  position: absolute;
-  top: -7px;
-  right: -30px;
-  font-size: 14px; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) .perc .red {
-  color: #e41b13; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) .perc .green {
-  color: #46be8a; }
-.territorial2Inner .tableWrap:last-child table tr td:nth-child(2) .red {
-  color: #e41b13; }

@@ -7,13 +7,15 @@ import { Territorial3Component } from './territorial3/territorial3.component';
 import { TerritorialRoutingModule } from './territorial-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
+import { Territorial4Component } from './territorial4/territorial4.component';
 
 @NgModule({
   declarations: [
     Territorial1Component,
     Territorial2Component,
     Territorial3Component,
-    MainTabsComponent
+    MainTabsComponent,
+    Territorial4Component
   ],
   imports: [
     CommonModule,

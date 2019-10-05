@@ -1,6 +1,6 @@
 <div class="mainTabs">
 
-  <div class="tab activeTab"  [routerLink]="['/manager1']">
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/manager1']">
     <div class="tabHeader">
       <div class="imgHolder">
         <img src="assets/images/video.png" alt="alt">
@@ -13,7 +13,8 @@
     <div class="desc">Новых видео</div>
   </div>
 
-  <div class="tab" [routerLink]="['/manager2']">
+
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/manager2']">
     <div class="tabHeader">
       <div class="imgHolder">
         <img src="assets/images/tabImg2.png" alt="alt">
@@ -26,7 +27,7 @@
     <div class="desc">Изменения в рейтинге</div>
   </div>
 
-  <div class="tab" [routerLink]="['/manager3']">
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/manager3']">
     <div class="tabHeader">
       <div class="imgHolder">
         <img src="assets/images/tabImg3.png" alt="alt">
@@ -39,7 +40,7 @@
     <div class="desc">Изменения статистики</div>
   </div>
 
-  <div class="tab" [routerLink]="['/manager4']">
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/manager4']">
     <div class="tabHeader">
       <div class="imgHolder">
         <img src="assets/images/tabImg4.png" alt="alt">

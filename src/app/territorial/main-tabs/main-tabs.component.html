@@ -1,1 +1,56 @@
-<p>main-tabs works!</p>
+<div class="mainTabs">
+
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/territorial1']">
+    <div class="tabHeader">
+      <div class="imgHolder">
+        <img src="assets/images/tabImg3.png" alt="alt">
+      </div>
+      <div class="text">Рейтинг</div>
+    </div>
+
+    <div class="num">5<sup>+2</sup></div>
+
+    <div class="desc">Изменения статистики</div>
+  </div>
+
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/territorial2']">
+    <div class="tabHeader">
+      <div class="imgHolder">
+        <img src="assets/images/tabImg2.png" alt="alt">
+      </div>
+      <div class="text">Статистика станции</div>
+    </div>
+
+    <div class="num">2,5%</div>
+
+    <div class="desc">Изменения в рейтинге</div>
+  </div>
+
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/territorial3']">
+    <div class="tabHeader">
+      <div class="imgHolder">
+        <img src="assets/images/video.png" alt="alt">
+      </div>
+      <div class="text">Не просмотренные видео</div>
+    </div>
+
+    <div class="num">399</div>
+
+    <div class="desc">Новых видео</div>
+  </div>
+
+  <div class="tab" routerLinkActive="activeTab" [routerLink]="['/territorial4']">
+    <div class="tabHeader">
+      <div class="imgHolder">
+        <img src="assets/images/tabImg4.png" alt="alt">
+      </div>
+      <div class="text">Чеклист</div>
+    </div>
+
+    <div class="num">
+      <img src="assets/images/Report.png" alt="alt">
+    </div>
+
+    <div class="desc">Есть изменеия в чеклисте</div>
+  </div>
+</div>
