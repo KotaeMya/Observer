@@ -1,0 +1,92 @@
+<!-- header -->
+
+<div class="header">
+  <div class="cabinet">
+    <img src="assets/images/cabImg.png" alt="alt">
+    <div class="text">Кабинет</div>
+  </div>
+  <div class="menu">
+    <div class="burger">
+      <img src="assets/images/burger.png" alt="alt">
+    </div>
+
+    <div class="menuHolder">
+      <div class="langWrap" (click)="languageReverse()">
+        <div class="current">English</div>
+        <img src="assets/images/arrowDown.png" alt="alt">
+
+        <div class="dropWrap langDrop" *ngIf="language">
+          <div class="item">English</div>
+          <div class="item">Chinese</div>
+          <div class="item">Japanese</div>
+          <div class="item">French</div>
+          <div class="item">Spanish</div>
+        </div>
+      </div>
+
+      <div class="userWrap" (click)="userCabinetReverse()">
+        <div class="avaWrap">
+          <img src="assets/images/user.png" alt="alt">
+          <div class="online"></div>
+        </div>
+
+        <div class="dropWrap userDrop" *ngIf="userCabinet">
+          <div class="item">Settings</div>
+          <div class="item">Profile</div>
+          <div class="item">Help</div>
+          <div class="line"></div>
+          <div class="item">Logout</div>
+        </div>
+      </div>
+
+      <div class="noticeWrap">
+        <div class="noticeHolder" (click)="notificationsReverse()">
+          <img src="assets/images/Notifications.png" alt="alt">
+          <div class="alert">5</div>
+        </div>
+
+        <div class="dropWrap noticeDrop" *ngIf="notifications">
+          <div class="mainTitle">
+            <div class="text">NOTIFICATIONS</div>
+            <div class="total">New 5</div>
+          </div>
+          <div class="noticeList">
+            <div class="singleNotice">
+              <div class="circle red"></div>
+              <div class="about">
+                <div class="title">New order has been placed.</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="singleNotice">
+              <div class="circle green"></div>
+              <div class="about">
+                <div class="title">Completed the task</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="singleNotice">
+              <div class="circle grey"></div>
+              <div class="about">
+                <div class="title">Completed the task</div>
+                <div class="time">10 minutes ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="messageWrap">
+        <img src="assets/images/Message.png" alt="alt">
+      </div>
+
+      <div class="chatWrap">
+        <img src="assets/images/Chart.png" alt="aclt">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- header -->
