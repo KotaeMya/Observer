@@ -13,6 +13,8 @@ import { TopModule } from './top/top.module';
 import { HeaderComponent } from './header/header.component';
 // import { MyDatePickerModule } from 'mydatepicker';
 import { FormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ManagerModule,
     TerritorialModule,
-    TopModule/*,
+    TopModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule/*,
     MyDatePickerModule*/
   ],
   providers: [],

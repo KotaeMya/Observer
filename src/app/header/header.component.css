@@ -158,7 +158,7 @@ MAIN
 .header .menu .menuHolder .noticeWrap .noticeHolder {
   position: relative;
   cursor: pointer; }
-.header .menu .menuHolder .noticeWrap .noticeHolder .alert {
+.header .menu .menuHolder .noticeWrap .noticeHolder .alertRed {
   position: absolute;
   top: -12px;
   right: -12px;

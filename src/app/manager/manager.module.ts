@@ -8,6 +8,9 @@ import { Manager4Component } from './manager4/manager4.component';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     Manager1Component,
@@ -18,7 +21,9 @@ import { MainTabsComponent } from './main-tabs/main-tabs.component';
   ],
   imports: [
     ManagerRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class ManagerModule { }
