@@ -131,3 +131,18 @@ MAIN TABS
   color: #ffffff; }
 .mainTabs .activeTab .num {
   color: #ffffff; }
+
+::ng-deep body .ui-inputtext{
+  display: block;
+  outline: none;
+  border: none;
+  background: #ffffff;
+
+  height: 40px;
+  width: 112px;
+  border-radius: 0 4px 4px 0;
+  padding: 0 14px;
+
+  color: #808a92;
+  font: inherit;
+}

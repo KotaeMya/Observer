@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainTabsComponent implements OnInit {
 
+  private unviewedVideos: number = 100;
+
   constructor() { }
 
   ngOnInit() {
