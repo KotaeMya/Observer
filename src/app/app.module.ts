@@ -11,9 +11,7 @@ import { TerritorialModule } from './territorial/territorial.module';
 import { TopComponent } from './top/top.component';
 import { TopModule } from './top/top.module';
 import { HeaderComponent } from './header/header.component';
-// import { MyDatePickerModule } from 'mydatepicker';
 import { FormsModule } from '@angular/forms';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -32,9 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ManagerModule,
     TerritorialModule,
     TopModule,
-    BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule/*,
-    MyDatePickerModule*/
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
