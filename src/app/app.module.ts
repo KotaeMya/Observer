@@ -13,6 +13,7 @@ import { TopModule } from './top/top.module';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ManagerModule,
     TerritorialModule,
     TopModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

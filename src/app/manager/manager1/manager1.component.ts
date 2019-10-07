@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manager1.component.css']
 })
 export class Manager1Component implements OnInit {
-
+  dateFrom: Date;
+  public dateTo: Date;
   constructor() { }
 
   ngOnInit() {
   }
 
+  getData(): void {
+    console.log(`from: ${this.dateFrom} to: ${this.dateTo}`);
+  }
 }

@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
 import { CalendarModule } from 'primeng/calendar';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CalendarModule } from 'primeng/calendar';
     MainTabsComponent
   ],
   imports: [
+    FormsModule,
     ManagerRoutingModule,
     SharedModule,
     CalendarModule

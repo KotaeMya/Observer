@@ -7,19 +7,17 @@
       <div class="calendal">
         <img src="assets/images/calendar.png" alt="alt">
       </div>
-      <p-calendar placeholder="25/06/2019" formControlName="date"></p-calendar>
+      <p-calendar [(ngModel)]="dateFrom" dateFormat="dd.mm.yy" placeholder="25/06/2019" (click)="getData()"></p-calendar> <!--(onSelect)="getData($event)"-->
     </div>
     <div class="sep">—</div>
     <div class="dateInput">
       <div class="calendal">
         <img src="assets/images/calendar.png" alt="alt">
       </div>
-      <!--<input type="text" placeholder="25/06/2019">-->
-      <p-calendar placeholder="25/06/2019" formControlName="date"></p-calendar>
+      <p-calendar [(ngModel)]="dateTo" (click)="getData()"  placeholder="25/06/2019" ></p-calendar>
     </div>
 
   </div>
-
   <!--  /date inputs  -->
 
   <!--  processed  -->
