@@ -8,8 +8,11 @@ import { Manager4Component } from './manager4/manager4.component';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
-import { CalendarModule } from 'primeng/calendar';
-import {FormsModule} from '@angular/forms';
+// import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+import { DateSerice } from '../shared/services/date.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { VideosComponent } from './manager1/videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,18 @@ import {FormsModule} from '@angular/forms';
     Manager2Component,
     Manager3Component,
     Manager4Component,
-    MainTabsComponent
+    MainTabsComponent,
+    VideosComponent
   ],
   imports: [
     FormsModule,
     ManagerRoutingModule,
     SharedModule,
-    CalendarModule
+    NgbModule/*,
+    CalendarModule*/
+  ],
+  providers: [
+    DateSerice
   ]
 })
 export class ManagerModule { }
