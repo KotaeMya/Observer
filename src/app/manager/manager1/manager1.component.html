@@ -1,3 +1,5 @@
+
+
 <div class="mainWrap">
 
   <!--  date inputs  -->
@@ -23,9 +25,9 @@
 
     <div class="head">
       <div class="videoTabsWrap">
-        <div class="videoTab active">Новые</div>
-        <div class="videoTab">ПРОСМОТРЕНЫЕ</div>
-        <div class="videoTab">Избранное</div>
+        <div [ngClass]="{active: newBtn}" class="videoTab" (click)="newVideosClick()">Новые</div>
+        <div [ngClass]="{active: oldBtn}" class="videoTab" (click)="oldVideosClick()">ПРОСМОТРЕНЫЕ</div>
+        <div [ngClass]="{active: favoriteBtn}" class="videoTab" (click)="favoriteVideosClick()">Избранное</div>
       </div>
       <div class="filtersWrap">
         <div class="filter">
@@ -93,172 +95,6 @@
         </div>
       </div>
     </div>
-
-<!--    <div class="singleVideo">
-      <div class="videoWrap">
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-      </div>
-
-      <div class="info">
-        <div class="top">
-          <div class="text">
-            <div class="date">10.07.2019</div>
-            <div class="name">Оператор Камера 2</div>
-          </div>
-
-          <div class="favorite">
-            <img src="assets/images/star.png" alt="alt">
-          </div>
-        </div>
-
-        <div class="bottom">
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="singleVideo">
-      <div class="videoWrap">
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-      </div>
-
-      <div class="info">
-        <div class="top">
-          <div class="text">
-            <div class="date">10.07.2019</div>
-            <div class="name">Оператор Камера 2</div>
-          </div>
-
-          <div class="favorite">
-            <img src="assets/images/star.png" alt="alt">
-          </div>
-        </div>
-
-        <div class="bottom">
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="singleVideo">
-      <div class="videoWrap">
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-        <div class="videoHolder">
-          <img src="assets/images/videoPreview.png" alt="alt">
-        </div>
-      </div>
-
-      <div class="info">
-        <div class="top">
-          <div class="text">
-            <div class="date">10.07.2019</div>
-            <div class="name">Оператор Камера 2</div>
-          </div>
-
-          <div class="favorite">
-            <img src="assets/images/star.png" alt="alt">
-          </div>
-        </div>
-
-        <div class="bottom">
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-
     <div class="paginator">
       <button><</button>
       <button class="active">1</button>

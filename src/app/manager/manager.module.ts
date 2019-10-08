@@ -8,11 +8,10 @@ import { Manager4Component } from './manager4/manager4.component';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
-// import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { DateSerice } from '../shared/services/date.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VideosComponent } from './manager1/videos/videos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { VideosComponent } from './manager1/videos/videos.component';
     FormsModule,
     ManagerRoutingModule,
     SharedModule,
-    NgbModule/*,
-    CalendarModule*/
+    NgbModule
   ],
   providers: [
     DateSerice

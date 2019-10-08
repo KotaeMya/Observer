@@ -10,6 +10,10 @@ export class Manager1Component implements OnInit {
   dateTo: Date;
   dateFrom: Date;
 
+  newBtn: boolean = true;
+  oldBtn: boolean = false;
+  favoriteBtn: boolean = false;
+
   videos = [
     {
       video1: 'assets/images/videoPreview.png',
@@ -50,7 +54,7 @@ export class Manager1Component implements OnInit {
       greeting: true,
       offer: true,
       regionalAction: true,
-    },
+    }
   ];
 
   constructor() { }
@@ -60,5 +64,104 @@ export class Manager1Component implements OnInit {
 
   getData(): void {
     console.log(`from: ${this.dateFrom} to: ${this.dateTo}`);
+  }
+
+  newVideosClick(): void {
+    this.newBtn = true;
+    this.oldBtn = false;
+    this.favoriteBtn = false;
+
+
+    this.videos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      }
+    ];
+  }
+
+  oldVideosClick(): void {
+    this.newBtn = false;
+    this.oldBtn = true;
+    this.favoriteBtn = false;
+
+    this.videos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      }
+    ];
+  }
+
+  favoriteVideosClick(): void {
+    this.newBtn = false;
+    this.oldBtn = false;
+    this.favoriteBtn = true;
+
+
+    this.videos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+      }
+    ];
   }
 }

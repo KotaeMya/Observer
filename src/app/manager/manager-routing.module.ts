@@ -11,9 +11,9 @@ import { VideosComponent } from './manager1/videos/videos.component';
 
 const routes: Routes = [
     { path: '', component: ManagerComponent, children: [
-        { path: 'manager1', component: Manager1Component, children:[
+        { path: 'manager1', component: Manager1Component/*, children:[
             {path: ':name', component: VideosComponent}
-          ] },
+          ] */},
         { path: 'manager2', component: Manager2Component },
         { path: 'manager3', component: Manager3Component },
         { path: 'manager4', component: Manager4Component }
