@@ -10,7 +10,7 @@ import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
 import { FormsModule } from '@angular/forms';
 import { DateSerice } from '../shared/services/date.service';
-import { VideosComponent } from './manager1/videos/videos.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -19,8 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     Manager2Component,
     Manager3Component,
     Manager4Component,
-    MainTabsComponent,
-    VideosComponent
+    MainTabsComponent
   ],
   imports: [
     FormsModule,

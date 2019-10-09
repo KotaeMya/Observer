@@ -10,9 +10,12 @@ export class Manager1Component implements OnInit {
   dateTo: Date;
   dateFrom: Date;
 
-  newBtn: boolean = true;
-  oldBtn: boolean = false;
-  favoriteBtn: boolean = false;
+  newBtn = true;
+  oldBtn = false;
+  favoriteBtn = false;
+
+  page = 1;
+  pageSize = 3;
 
   videos = [
     {

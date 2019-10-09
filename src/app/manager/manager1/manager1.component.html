@@ -1,5 +1,3 @@
-
-
 <div class="mainWrap">
 
   <!--  date inputs  -->
@@ -41,7 +39,7 @@
       </div>
     </div>
 
-    <div class="singleVideo" *ngFor="let item of videos">
+    <div class="singleVideo" *ngFor="let item of videos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="videoWrap">
         <div class="videoHolder">
           <img [src]="item.video1" alt="alt">
@@ -96,13 +94,12 @@
       </div>
     </div>
     <div class="paginator">
-      <button><</button>
-      <button class="active">1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <button>></button>
+      <ngb-pagination [(page)]="page"
+                      [pageSize]="pageSize"
+                      [collectionSize]="videos.length" aria-label="Default pagination">
+        <ng-template ngbPaginationPrevious>&lt;</ng-template>
+        <ng-template ngbPaginationNext>&gt;</ng-template>
+      </ngb-pagination>
     </div>
 
   </div>
