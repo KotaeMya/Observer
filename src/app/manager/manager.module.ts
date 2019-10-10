@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 
 import { FormsModule } from '@angular/forms';
-import { DateSerice } from '../shared/services/date.service';
+import { DateService } from '../shared/services/date.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [
-    DateSerice
+    DateService
   ]
 })
 export class ManagerModule { }

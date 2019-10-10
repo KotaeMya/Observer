@@ -407,6 +407,7 @@ VIDEO TAB
   background: #37474f;
   color: #ffffff; }
 
+/*
 ::ng-deep ngb-pagination .page-item.active .page-link {
   background-color: #37474f;
   color: #ffffff;
@@ -427,4 +428,4 @@ VIDEO TAB
   border-radius: 4px;}
 ::ng-deep ngb-pagination .page-item:last-child .page-link {
   margin-right: 0;
-  margin-left: 0;}
+  margin-left: 0;}*/

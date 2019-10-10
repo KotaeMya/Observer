@@ -27,3 +27,27 @@ img, a {
 
 .clearFix {
   clear: both; }
+
+ /*ngb-pagination*/
+ngb-pagination .page-item.active .page-link {
+  background-color: #37474f;
+  color: #ffffff;
+  border-color: #fff;}
+ngb-pagination .page-link:hover {
+  background-color: #37474f;
+  color: #ffffff;}
+ngb-pagination .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 33px;
+  height: 33px;
+  margin-right: 10px;
+  outline: none;
+  color: #76838f;
+  border-radius: 4px;}
+ngb-pagination .page-item:last-child .page-link {
+  margin-right: 0;
+  margin-left: 0;}
+  /*ngb-pagination*/

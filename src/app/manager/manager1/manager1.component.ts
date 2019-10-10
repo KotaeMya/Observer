@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {DateService} from '../../shared/services/date.service';
 
 @Component({
   selector: 'app-manager1',
@@ -60,9 +61,14 @@ export class Manager1Component implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private dateService: DateService) { }
 
   ngOnInit() {
+    this.dateService.getDates().subscribe(data => {
+      this.dateFrom = data[0];
+      this.dateTo = data[1];
+    }
+    );
   }
 
   getData(): void {

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DateSerice } from '../services/date.service';
+import { DateService } from '../services/date.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {combineLatest} from 'rxjs';
-import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-date-inputs',
@@ -14,7 +13,7 @@ export class DateInputsComponent implements OnInit {
   dateFrom: Date;
   dateTo: Date;
   form: FormGroup;
-  constructor(private dateService: DateSerice) { }
+  constructor(private dateService: DateService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -26,7 +25,7 @@ export class DateInputsComponent implements OnInit {
       this.form.get('dateFrom').valueChanges,
       this.form.get('dateTo').valueChanges
     ).subscribe(data => {
-      this.dateService.getDates(data);
+      this.dateService.setDates(data);
     });
   }
 
