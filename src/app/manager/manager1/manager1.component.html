@@ -23,76 +23,96 @@
 
     <div class="head">
       <div class="videoTabsWrap">
-        <div [ngClass]="{active: newBtn}" class="videoTab" (click)="newVideosClick()">Новые</div>
-        <div [ngClass]="{active: oldBtn}" class="videoTab" (click)="oldVideosClick()">ПРОСМОТРЕНЫЕ</div>
-        <div [ngClass]="{active: favoriteBtn}" class="videoTab" (click)="favoriteVideosClick()">Избранное</div>
+        <div [ngClass]="{active: newBtn}" class="videoTab" (click)="newVideosShow()">Новые</div>
+        <div [ngClass]="{active: watchedBtn}" class="videoTab" (click)="watchedVideosShow()">ПРОСМОТРЕНЫЕ</div>
+        <div [ngClass]="{active: favoriteBtn}" class="videoTab" (click)="favoriteVideosShow()">Избранное</div>
       </div>
       <div class="filtersWrap">
-        <div class="filter">
+        <div class="filter" (click)="filtersShow()">
           <div class="value">Фильтр</div>
           <img src="assets/images/filterArrow.png" alt="alt">
         </div>
-        <div class="filter">
+        <div class="dropWrap filterDrop filters" *ngIf="filters" (click)="filtersShow()">
+          <div class="item">Сортировать от большего количества нарушений к меньшему</div>
+          <div class="line"></div>
+          <div class="item">Сортировать от меньшего количества нарушений к большему</div>
+          <div class="line"></div>
+          <div class="item">Сортировать по самым новым видео</div>
+          <div class="line"></div>
+          <div class="item">Сортировать по самым старым видео</div>
+        </div>
+        <div class="filter" (click)="filtersKpiShow()">
           <div class="value">KPI</div>
           <img src="assets/images/filterArrow.png" alt="alt">
         </div>
+        <div class="dropWrap filterDrop filtersKpi" *ngIf="filtersKpi" (click)="filtersKpiShow()">
+          <div class="item">Settings</div>
+          <div class="item">Profile</div>
+          <div class="item">Help</div>
+          <div class="line"></div>
+          <div class="item">Logout</div>
+        </div>
+
       </div>
     </div>
 
-    <div class="singleVideo" *ngFor="let item of videos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      <div class="videoWrap">
-        <div class="videoHolder">
-          <img [src]="item.video1" alt="alt">
-        </div>
-        <div class="videoHolder">
-          <img [src]="item.video2" alt="alt">
-        </div>
-      </div>
-
-      <div class="info">
-        <div class="top">
-          <div class="text">
-            <div class="date">{{item.date}}</div>
-            <div class="name">{{item.operator}} Камера {{item.camera}}</div>
+    <div class="videos" *ngFor="let item of videos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let i = index">
+      <div class="singleVideo" *ngIf="item.show">
+          <div class="videoWrap">
+            <div class="videoHolder" (click)="watchedVideo(item, i)">
+              <img [src]="item.video1" alt="alt">
+            </div>
+            <div class="videoHolder">
+              <img [src]="item.video2" (click)="watchedVideo(item, i)" alt="alt">
+            </div>
           </div>
 
-          <div class="favorite">
-            <img src="assets/images/star.png" alt="alt">
-          </div>
-        </div>
+          <div class="info">
+            <div class="top">
+              <div class="text">
+                <div class="date">{{item.date | date: 'dd/MM/yyyy'}}</div>
+                <div class="name">{{item.operator}} Камера {{item.camera}}</div>
+              </div>
 
-        <div class="bottom">
-          <div class="column">
-            <div class="item" *ngIf="item.greeting">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
+              <div class="favorite" (click)="favoriteAdd(item, i)">
+                <img src="assets/images/star.png" alt="alt">
+              </div>
             </div>
-            <div class="item" *ngIf="item.offer">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item" *ngIf="item.regionalAction">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
+
+            <div class="bottom">
+              <div class="column">
+                <div class="item" *ngIf="item.greeting">
+                  <div class="text">Приветствие клиента</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+                <div class="item" *ngIf="item.offer">
+                  <div class="text">Предложить карту лояльности</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+                <div class="item" *ngIf="item.regionalAction">
+                  <div class="text">Региональная акция</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+              </div>
+              <div class="column">
+                <div class="item" *ngIf="item.greeting">
+                  <div class="text">Приветствие клиента</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+                <div class="item" *ngIf="item.offer">
+                  <div class="text">Предложить карту лояльности</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+                <div class="item" *ngIf="item.regionalAction">
+                  <div class="text">Региональная акция</div>
+                  <img src="assets/images/Message.png" alt="alt">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="item" *ngIf="item.greeting">
-              <div class="text">Приветствие клиента</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item" *ngIf="item.offer">
-              <div class="text">Предложить карту лояльности</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-            <div class="item" *ngIf="item.regionalAction">
-              <div class="text">Региональная акция</div>
-              <img src="assets/images/Message.png" alt="alt">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+
     <div class="paginator">
       <ngb-pagination [(page)]="page"
                       [pageSize]="pageSize"

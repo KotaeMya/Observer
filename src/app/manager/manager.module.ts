@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DateService } from '../shared/services/date.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ManagerRoutingModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    ChartModule
   ],
   providers: [
     DateService

@@ -40,17 +40,23 @@
     <div class="bottomPlate">
       <div class="selectWrap">
         <div class="singleSelect">
-          <div class="inner">
-            <img src="assets/images/plusIcon.png" alt="alt" class="plus">
+          <div class="inner" (click)="fuelerOpen()">
+            <img [src]="fueler.symbol" alt="alt" class="plus">
             <div class="text">Заправщик</div>
+          </div>
+          <div class="selectDrop" *ngIf="fueler.status">
+            <div class="dropItem dropItemActive">uHOT</div>
+            <div class="dropItem">Безопасность</div>
+            <div class="dropItem">TLAG</div>
+            <div class="dropItem">МОшенничество с картой лояльности</div>
           </div>
         </div>
         <div class="singleSelect">
-          <div class="inner">
-            <img src="assets/images/minusIcon.png" alt="alt" class="plus">
+          <div class="inner" (click)="operatorOpen()">
+            <img [src]="operator.symbol" alt="alt" class="plus">
             <div class="text">Оператор</div>
           </div>
-          <div class="selectDrop">
+          <div class="selectDrop" *ngIf="operator.status">
             <div class="dropItem dropItemActive">uHOT</div>
             <div class="dropItem">Безопасность</div>
             <div class="dropItem">TLAG</div>

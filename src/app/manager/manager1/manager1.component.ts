@@ -8,169 +8,184 @@ import {DateService} from '../../shared/services/date.service';
 })
 export class Manager1Component implements OnInit {
 
-  dateTo: Date;
-  dateFrom: Date;
+  public dateTo: Date;
+  public dateFrom: Date;
 
-  newBtn = true;
-  oldBtn = false;
-  favoriteBtn = false;
+  public newBtn = true;
+  public watchedBtn = false;
+  public favoriteBtn = false;
 
-  page = 1;
-  pageSize = 3;
+  public page = 1;
+  public pageSize = 4;
 
-  videos = [
-    {
-      video1: 'assets/images/videoPreview.png',
-      video2: 'assets/images/videoPreview.png',
-      date: '12.12.12',
-      operator: 'Иванов И.И.',
-      camera: 1,
-      greeting: true,
-      offer: true,
-      regionalAction: true,
-    },
-    {
-      video1: 'assets/images/videoPreview.png',
-      video2: 'assets/images/videoPreview.png',
-      date: '12.12.12',
-      operator: 'Иванов И.И.',
-      camera: 1,
-      greeting: true,
-      offer: true,
-      regionalAction: true,
-    },
-    {
-      video1: 'assets/images/videoPreview.png',
-      video2: 'assets/images/videoPreview.png',
-      date: '12.12.12',
-      operator: 'Иванов И.И.',
-      camera: 1,
-      greeting: true,
-      offer: true,
-      regionalAction: true,
-    },
-    {
-      video1: 'assets/images/videoPreview.png',
-      video2: 'assets/images/videoPreview.png',
-      date: '12.12.12',
-      operator: 'Иванов И.И.',
-      camera: 1,
-      greeting: true,
-      offer: true,
-      regionalAction: true,
-    }
-  ];
+  public videos = [];
+  public newVideos = [];
+  public watchedVideos = [];
+  public favoriteVideos = [];
+
+  // filters
+  public filters = false;
+  public filtersKpi = false;
+  // filters
 
   constructor(private dateService: DateService) { }
 
   ngOnInit() {
-    this.dateService.getDates().subscribe(data => {
-      this.dateFrom = data[0];
-      this.dateTo = data[1];
-    }
+    this.favoriteVideos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: true
+      }
+    ];
+    this.watchedVideos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: true
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: true
+      }
+    ];
+    this.videos = this.newVideos = [
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('10/13/2019'), // mm/dd/yy
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('02/02/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('03/02/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('02/28/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false
+      }
+    ];
+
+
+    this.dateService.getDates().subscribe(dates => {
+      this.dateFrom = dates[0];
+      this.dateTo = dates[1];
+
+      this.showVideosByDates();
+        // Date.parse(data[0]) < Date.parse(this.videos[0].date) ? console.log('Yes') : console.log('No'); --Date in ms
+      }
     );
   }
 
-  getData(): void {
-    console.log(`from: ${this.dateFrom} to: ${this.dateTo}`);
-  }
+  showVideosByDates(): void {
+    this.videos.forEach( item => {
+      if (item.date >= this.dateFrom && item.date <= this.dateTo) {
+        item.show = true;
+      } else {
+        item.show = false;
+      }
+    });
+}
 
-  newVideosClick(): void {
+  newVideosShow(): void {
     this.newBtn = true;
-    this.oldBtn = false;
+    this.watchedBtn = false;
     this.favoriteBtn = false;
 
-
-    this.videos = [
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      }
-    ];
+    this.videos = this.newVideos;
   }
 
-  oldVideosClick(): void {
+  watchedVideosShow(): void {
     this.newBtn = false;
-    this.oldBtn = true;
+    this.watchedBtn = true;
     this.favoriteBtn = false;
 
-    this.videos = [
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      }
-    ];
+    this.videos = this.watchedVideos.reverse();
   }
 
-  favoriteVideosClick(): void {
+  watchedVideo(item, index): void {
+    // проигрывается видео
+    this.newVideos.splice(index, 1);
+    this.watchedVideos.push(item);
+  }
+
+  favoriteVideosShow(): void {
     this.newBtn = false;
-    this.oldBtn = false;
+    this.watchedBtn = false;
     this.favoriteBtn = true;
 
+    this.videos = this.favoriteVideos;
+  }
 
-    this.videos = [
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-      }
-    ];
+  favoriteAdd(item, index): void {
+    this.newVideos.splice(index, 1);
+    this.videos = this.newVideos;
+    this.favoriteVideos.push(item);
+    this.watchedVideos.push(item);
+    console.log(index);
+    console.log(this.favoriteVideos);
+  }
+
+  filtersShow() {
+    this.filters = !this.filters;
+  }
+  filtersKpiShow() {
+    this.filtersKpi = !this.filtersKpi;
   }
 }
