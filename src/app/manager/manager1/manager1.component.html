@@ -41,16 +41,16 @@
           <div class="line"></div>
           <div class="item">Сортировать по самым старым видео</div>
         </div>
-        <div class="filter" (click)="filtersKpiShow()">
-          <div class="value">KPI</div>
-          <img src="assets/images/filterArrow.png" alt="alt">
-        </div>
         <div class="dropWrap filterDrop filtersKpi" *ngIf="filtersKpi" (click)="filtersKpiShow()">
           <div class="item">Settings</div>
           <div class="item">Profile</div>
           <div class="item">Help</div>
           <div class="line"></div>
           <div class="item">Logout</div>
+        </div>
+        <div class="filter" (click)="filtersKpiShow()">
+          <div class="value">KPI</div>
+          <img src="assets/images/filterArrow.png" alt="alt">
         </div>
 
       </div>
@@ -74,8 +74,7 @@
                 <div class="name">{{item.operator}} Камера {{item.camera}}</div>
               </div>
 
-              <div class="favorite" (click)="favoriteAdd(item, i)">
-                <img src="assets/images/star.png" alt="alt">
+              <div [ngClass]="{'favoriteActive': item.favorite}" class="favorite" (click)="favoriteAdd(item, i)">
               </div>
             </div>
 

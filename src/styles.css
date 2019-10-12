@@ -32,10 +32,10 @@ img, a {
 ngb-pagination .page-item.active .page-link {
   background-color: #37474f;
   color: #ffffff;
-  border-color: #fff;}
+  border-color: #fff; }
 ngb-pagination .page-link:hover {
   background-color: #37474f;
-  color: #ffffff;}
+  color: #ffffff; }
 ngb-pagination .page-link {
   display: flex;
   justify-content: center;
@@ -46,8 +46,13 @@ ngb-pagination .page-link {
   margin-right: 10px;
   outline: none;
   color: #76838f;
-  border-radius: 4px;}
+  border-radius: 4px; }
 ngb-pagination .page-item:last-child .page-link {
   margin-right: 0;
-  margin-left: 0;}
+  margin-left: 0; }
   /*ngb-pagination*/
+
+.text{
+  line-height: 14px; }
+.desc{
+  line-height: 16px; }

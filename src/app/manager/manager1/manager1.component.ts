@@ -28,21 +28,63 @@ export class Manager1Component implements OnInit {
   public filtersKpi = false;
   // filters
 
+  public favoriteImg = 'assets/images/star.png';
+
   constructor(private dateService: DateService) { }
 
   ngOnInit() {
-    this.favoriteVideos = [
+    this.videos = this.newVideos = [
       {
         video1: 'assets/images/videoPreview.png',
         video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
+        date: new Date('10/13/2019'), // mm/dd/yy
         operator: 'Иванов И.И.',
         camera: 1,
         greeting: true,
         offer: true,
         regionalAction: true,
         show: true,
-        watched: true
+        watched: false,
+        favorite: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('02/02/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false,
+        favorite: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('03/02/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false,
+        favorite: false
+      },
+      {
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: new Date('02/28/2019'),
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: false,
+        favorite: false
       }
     ];
     this.watchedVideos = [
@@ -56,7 +98,8 @@ export class Manager1Component implements OnInit {
         offer: true,
         regionalAction: true,
         show: true,
-        watched: true
+        watched: true,
+        favorite: false
       },
       {
         video1: 'assets/images/videoPreview.png',
@@ -68,60 +111,10 @@ export class Manager1Component implements OnInit {
         offer: true,
         regionalAction: true,
         show: true,
-        watched: true
+        watched: true,
+        favorite: false
       }
     ];
-    this.videos = this.newVideos = [
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: new Date('10/13/2019'), // mm/dd/yy
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-        show: true,
-        watched: false
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: new Date('02/02/2019'),
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-        show: true,
-        watched: false
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: new Date('03/02/2019'),
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-        show: true,
-        watched: false
-      },
-      {
-        video1: 'assets/images/videoPreview.png',
-        video2: 'assets/images/videoPreview.png',
-        date: new Date('02/28/2019'),
-        operator: 'Иванов И.И.',
-        camera: 1,
-        greeting: true,
-        offer: true,
-        regionalAction: true,
-        show: true,
-        watched: false
-      }
-    ];
-
 
     this.dateService.getDates().subscribe(dates => {
       this.dateFrom = dates[0];
@@ -162,7 +155,9 @@ export class Manager1Component implements OnInit {
   watchedVideo(item, index): void {
     // проигрывается видео
     this.newVideos.splice(index, 1);
+    this.videos = this.newVideos;
     this.watchedVideos.push(item);
+    item.watched = true;
   }
 
   favoriteVideosShow(): void {
@@ -174,12 +169,19 @@ export class Manager1Component implements OnInit {
   }
 
   favoriteAdd(item, index): void {
-    this.newVideos.splice(index, 1);
-    this.videos = this.newVideos;
-    this.favoriteVideos.push(item);
-    this.watchedVideos.push(item);
-    console.log(index);
-    console.log(this.favoriteVideos);
+    if (!item.watched) {
+      this.newVideos.splice(index, 1);
+      this.videos = this.newVideos;
+      this.watchedVideos.push(item);
+      this.favoriteVideos.push(item);
+      item.watched = item.favorite = true;
+    } else if (item.watched && !item.favorite) {
+      this.favoriteVideos.push(item);
+      item.favorite = true;
+    } else if (item.favorite) {
+      this.favoriteVideos.splice(index, 1);
+      item.favorite = false;
+    }
   }
 
   filtersShow() {

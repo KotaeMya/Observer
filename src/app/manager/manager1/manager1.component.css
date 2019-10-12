@@ -334,6 +334,16 @@ VIDEO TAB
   padding-left: 18px; }
 .innerTab1 .singleVideo .info .top .favorite {
   cursor: pointer; }
+
+.favorite {
+  background-image: url('../../../assets/images/star.png');
+  width: 16px;
+  height: 16px; }
+.favorite:hover {
+  background-image: url('../../../assets/images/starActive.png'); }
+.favoriteActive {
+  background-image: url('../../../assets/images/starActive.png'); }
+
 .innerTab1 .singleVideo .info .bottom {
   padding-top: 24px;
   display: -webkit-box;
@@ -410,7 +420,7 @@ VIDEO TAB
   background: #37474f;
   color: #ffffff; }
 
-.filterDrop{
+.filterDrop {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background: #ffffff;
@@ -418,7 +428,7 @@ VIDEO TAB
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
   width: 200px; }
-.filterDrop .item{
+.filterDrop .item {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   line-height: 2;
@@ -429,18 +439,18 @@ VIDEO TAB
   padding-left: 9px;
   cursor: pointer;
   -webkit-transition: all .3s ease;
-  transition: all .3s ease;}
-.filterDrop .item:hover{
-  background: #f2f5f7;}
-.filters{
+  transition: all .3s ease; }
+.filterDrop .item:hover {
+  background: #f2f5f7; }
+.filters {
   position: absolute;
   top: 50px;
-  left: 0px;}
-.filtersKpi{
+  left: 0px; }
+.filtersKpi {
   position: absolute;
   top: 50px;
-  right: -30px;}
-.line{
+  right: -50px; }
+.line {
   height: 1px;
   width: -webkit-calc(100% + 12px);
   width: calc(100% + 12px);
