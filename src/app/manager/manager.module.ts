@@ -13,6 +13,7 @@ import { DateService } from '../shared/services/date.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartModule } from 'primeng/chart';
+import { MainTabsService } from '../shared/services/main-tabs.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ChartModule } from 'primeng/chart';
     ChartModule
   ],
   providers: [
-    DateService
+    DateService,
+    MainTabsService
   ]
 })
 export class ManagerModule { }

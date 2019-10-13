@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MainTabsService} from '../../shared/services/main-tabs.service';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-main-tabs',
@@ -7,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainTabsComponent implements OnInit {
 
-  private unviewedVideos = 100;
+  public unviewedVideos$: Observable<number>;
 
-  constructor() { }
+  constructor(private mainTabsService: MainTabsService) { }
 
   ngOnInit() {
+    this.unviewedVideos$ = this.mainTabsService.getAmountNewVideos().pipe(
+      map( value => value));
   }
 
 }

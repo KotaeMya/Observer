@@ -1,12 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {DateService} from '../../shared/services/date.service';
+import {takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
+import {MainTabsService} from '../../shared/services/main-tabs.service';
 
 @Component({
   selector: 'app-manager1',
   templateUrl: './manager1.component.html',
   styleUrls: ['./manager1.component.css']
 })
-export class Manager1Component implements OnInit {
+export class Manager1Component implements OnInit, OnDestroy {
+  private unSubscribe$: Subject<void> = new Subject<void>();
 
   public dateTo: Date;
   public dateFrom: Date;
@@ -15,24 +19,30 @@ export class Manager1Component implements OnInit {
   public watchedBtn = false;
   public favoriteBtn = false;
 
-  public page = 1;
-  public pageSize = 4;
+  public page = 1; // начальная страница пагинации
+  public pageSize = 4; // кол-во элементов страницы пагинации
 
   public videos = [];
-  public newVideos = [];
-  public watchedVideos = [];
-  public favoriteVideos = [];
+  private newVideos = [];
+  private watchedVideos = [];
+  private favoriteVideos = [];
 
   // filters
   public filters = false;
   public filtersKpi = false;
   // filters
 
-  public favoriteImg = 'assets/images/star.png';
-
-  constructor(private dateService: DateService) { }
+  constructor(
+    private dateService: DateService,
+    private mainTabsService: MainTabsService
+    ) { }
 
   ngOnInit() {
+    this.initArrays();
+    this.getDatesFromCalendar();
+  }
+
+  initArrays(): void {
     this.videos = this.newVideos = [
       {
         video1: 'assets/images/videoPreview.png',
@@ -131,16 +141,19 @@ export class Manager1Component implements OnInit {
       }
     ];
 
-    this.dateService.getDates().subscribe(dates => {
-      this.dateFrom = dates[0];
-      this.dateTo = dates[1];
+    this.amountNewVideos();
+  }
+  getDatesFromCalendar(): void {
+    this.dateService.getDates().pipe(
+      takeUntil(this.unSubscribe$)
+    ).subscribe(dates => {
+        this.dateFrom = dates[0];
+        this.dateTo = dates[1];
 
-      this.showVideosByDates();
-        // Date.parse(data[0]) < Date.parse(this.videos[0].date) ? console.log('Yes') : console.log('No'); --Date in ms
+        this.showVideosByDates();
       }
     );
   }
-
   showVideosByDates(): void {
     this.videos.forEach( item => {
       if (item.date >= this.dateFrom && item.date <= this.dateTo) {
@@ -151,12 +164,17 @@ export class Manager1Component implements OnInit {
     });
 }
 
+  amountNewVideos(): void {
+    this.mainTabsService.sendAmountNewVideos(this.videos.length);
+  } // передает кол-во непросмотренных видео
+
   newVideosShow(): void {
     this.newBtn = true;
     this.watchedBtn = false;
     this.favoriteBtn = false;
 
     this.videos = this.newVideos;
+    this.amountNewVideos();
   }
 
   watchedVideosShow(): void {
@@ -173,6 +191,8 @@ export class Manager1Component implements OnInit {
     this.videos = this.newVideos;
     this.watchedVideos.push(item);
     item.watched = true;
+
+    this.amountNewVideos();
   }
 
   favoriteVideosShow(): void {
@@ -185,22 +205,24 @@ export class Manager1Component implements OnInit {
 
   favoriteAdd(item, index): void {
     if (!item.watched) {
-        this.newVideos.splice(index, 1);
-        this.videos = this.newVideos;
-        this.watchedVideos.push(item);
-        this.favoriteVideos.push(item);
-        item.watched = item.favorite = true;
+      this.newVideos.splice(index, 1);
+      this.videos = this.newVideos;
+      this.watchedVideos.push(item);
+      this.favoriteVideos.push(item);
+      item.watched = item.favorite = true;
+
+      this.amountNewVideos();
     } else if (item.watched && !item.favorite) {
         this.favoriteVideos.push(item);
         item.favorite = true;
     } else if (item.favorite) {
         let i = 0;
-        for (let favoriteItem of this.favoriteVideos) {
+        this.favoriteVideos.forEach( favoriteItem => {
           if (favoriteItem === item) {
             this.favoriteVideos.splice(i, 1);
           }
           i++;
-        }
+        });
         item.favorite = false;
     }
   }
@@ -210,5 +232,10 @@ export class Manager1Component implements OnInit {
   }
   filtersKpiShow() {
     this.filtersKpi = !this.filtersKpi;
+  }
+
+  ngOnDestroy() {
+    this.unSubscribe$.next();
+    this.unSubscribe$.complete();
   }
 }

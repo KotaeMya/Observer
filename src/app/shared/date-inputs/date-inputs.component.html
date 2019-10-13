@@ -5,7 +5,7 @@
       <div class="calendal">
         <img src="assets/images/calendar.png" alt="alt">
       </div>
-      <p-calendar formControlName="dateFrom" dateFormat="dd/mm/yy" placeholder="25/06/2019"></p-calendar> <!--(onSelect)="getData($event)"-->
+      <p-calendar formControlName="dateFrom" dateFormat="dd/mm/yy" placeholder="25/06/2019" [disabledDates]="invalidDates"></p-calendar>
     </div>
     <div class="sep">—</div>
     <div class="dateInput">
