@@ -87,6 +87,21 @@ export class Manager1Component implements OnInit {
         favorite: false
       }
     ];
+    this.favoriteVideos = [
+      /*{
+        video1: 'assets/images/videoPreview.png',
+        video2: 'assets/images/videoPreview.png',
+        date: '12.12.12',
+        operator: 'Иванов И.И.',
+        camera: 1,
+        greeting: true,
+        offer: true,
+        regionalAction: true,
+        show: true,
+        watched: true,
+        favorite: true
+      }*/
+    ];
     this.watchedVideos = [
       {
         video1: 'assets/images/videoPreview.png',
@@ -149,7 +164,7 @@ export class Manager1Component implements OnInit {
     this.watchedBtn = true;
     this.favoriteBtn = false;
 
-    this.videos = this.watchedVideos.reverse();
+    this.videos = this.watchedVideos;
   }
 
   watchedVideo(item, index): void {
@@ -170,17 +185,23 @@ export class Manager1Component implements OnInit {
 
   favoriteAdd(item, index): void {
     if (!item.watched) {
-      this.newVideos.splice(index, 1);
-      this.videos = this.newVideos;
-      this.watchedVideos.push(item);
-      this.favoriteVideos.push(item);
-      item.watched = item.favorite = true;
+        this.newVideos.splice(index, 1);
+        this.videos = this.newVideos;
+        this.watchedVideos.push(item);
+        this.favoriteVideos.push(item);
+        item.watched = item.favorite = true;
     } else if (item.watched && !item.favorite) {
-      this.favoriteVideos.push(item);
-      item.favorite = true;
+        this.favoriteVideos.push(item);
+        item.favorite = true;
     } else if (item.favorite) {
-      this.favoriteVideos.splice(index, 1);
-      item.favorite = false;
+        let i = 0;
+        for (let favoriteItem of this.favoriteVideos) {
+          if (favoriteItem === item) {
+            this.favoriteVideos.splice(i, 1);
+          }
+          i++;
+        }
+        item.favorite = false;
     }
   }
 

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Manager2Component implements OnInit {
   data: any;
+  options: any;
   constructor() { }
 
   ngOnInit() {
@@ -26,6 +27,16 @@ export class Manager2Component implements OnInit {
           borderColor: '#e20700'
         }
       ]
+    };
+    this.options = {
+      title: {
+        display: true,
+        text: 'My Title',
+        fontSize: 16
+      },
+      legend: {
+        position: 'bottom'
+      }
     };
   }
 
