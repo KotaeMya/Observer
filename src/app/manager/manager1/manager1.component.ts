@@ -234,6 +234,30 @@ export class Manager1Component implements OnInit, OnDestroy {
     this.filtersKpi = !this.filtersKpi;
   }
 
+  sortByNewVideos() {
+    console.log('Sort');
+    this.videos.sort( (a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else if (a.date > b.date) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  }
+  sortByOldVideos(): void {
+    this.videos.sort( (a, b) => {
+      if (a.date > b.date) {
+        return 1;
+      } else if (a.date < b.date) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
   ngOnDestroy() {
     this.unSubscribe$.next();
     this.unSubscribe$.complete();

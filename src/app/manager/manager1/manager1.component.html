@@ -37,9 +37,9 @@
           <div class="line"></div>
           <div class="item">Сортировать от меньшего количества нарушений к большему</div>
           <div class="line"></div>
-          <div class="item">Сортировать по самым новым видео</div>
+          <div class="item" (click)="sortByNewVideos()">Сортировать по самым новым видео</div>
           <div class="line"></div>
-          <div class="item">Сортировать по самым старым видео</div>
+          <div class="item" (click)="sortByOldVideos()">Сортировать по самым старым видео</div>
         </div>
         <div class="dropWrap filterDrop filtersKpi" *ngIf="filtersKpi" (click)="filtersKpiShow()">
           <div class="item">Settings</div>
