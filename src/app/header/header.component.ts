@@ -7,27 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  language: boolean;
-  userCabinet: boolean;
-  notifications: boolean;
-
   constructor() { }
 
   ngOnInit() {
-    this.userCabinet = this.notifications = this.language = false;
-  }
-
-  languageReverse(): void {
-    this.language = !this.language;
-    console.log(this.language);
-  }
-
-  userCabinetReverse(): void {
-    this.userCabinet = !this.userCabinet;
-  }
-
-  notificationsReverse(): void {
-    this.notifications = !this.notifications;
   }
 
 }
