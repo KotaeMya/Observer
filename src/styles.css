@@ -56,3 +56,11 @@ ngb-pagination .page-item:last-child .page-link {
   line-height: 14px; }
 .desc{
   line-height: 16px; }
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu .show {
+  display: none;
+}

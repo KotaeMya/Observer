@@ -121,6 +121,10 @@ MAIN
   transition: all .3s ease; }
 .header .menu .menuHolder .langWrap .current:hover {
   color: #58646c; }
+.current {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 .header .menu .menuHolder .langOpen {
   color: #58646c; }
 .header .menu .menuHolder .userWrap {

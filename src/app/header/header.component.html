@@ -11,11 +11,13 @@
     </div>
 
     <div class="menuHolder">
-      <div class="langWrap" (click)="languageReverse()">
-        <div class="current">English</div>
-        <img src="assets/images/arrowDown.png" alt="alt">
+      <div class="langWrap" ngbDropdown>
+        <div class="current" ngbDropdownToggle>
+          <div class="current">English</div>
+          <img  src="assets/images/arrowDown.png" alt="alt">
+        </div>
 
-        <div class="dropWrap langDrop" *ngIf="language">
+        <div class="dropWrap langDrop" ngbDropdownMenu >
           <div class="item">English</div>
           <div class="item">Chinese</div>
           <div class="item">Japanese</div>
@@ -23,22 +25,14 @@
           <div class="item">Spanish</div>
         </div>
       </div>
-      <!--<div ngbDropdown>
-        <button style="outline: none;" ngbDropdownToggle>English</button>
-        <img src="assets/images/arrowDown.png" alt="alt">
-        <div ngbDropdownMenu >
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-      </div>-->
-      <div class="userWrap" (click)="userCabinetReverse()">
-        <div class="avaWrap">
+
+      <div class="userWrap" ngbDropdown>
+        <div class="avaWrap" ngbDropdownToggle>
           <img src="assets/images/user.png" alt="alt">
           <div class="online"></div>
         </div>
 
-        <div class="dropWrap userDrop" *ngIf="userCabinet">
+        <div class="dropWrap userDrop" ngbDropdownMenu>
           <div class="item">Settings</div>
           <div class="item">Profile</div>
           <div class="item">Help</div>
@@ -47,7 +41,47 @@
         </div>
       </div>
 
-      <div class="noticeWrap">
+      <div class="noticeWrap" ngbDropdown>
+        <div class="noticeHolder" ngbDropdownToggle>
+          <img src="assets/images/Notifications.png" alt="alt">
+          <div class="alertRed">5</div>
+        </div>
+
+          <div class="dropWrap noticeDrop" ngbDropdownMenu>
+            <div class="mainTitle">
+              <div class="text">NOTIFICATIONS</div>
+              <div class="total">New 5</div>
+            </div>
+
+            <div class="noticeList">
+              <div class="singleNotice">
+                <div class="circle red"></div>
+                <div class="about">
+                  <div class="title">New order has been placed.</div>
+                  <div class="time">10 minutes ago</div>
+                </div>
+              </div>
+
+              <div class="singleNotice">
+                <div class="circle green"></div>
+                <div class="about">
+                  <div class="title">Completed the task</div>
+                  <div class="time">10 minutes ago</div>
+                </div>
+              </div>
+
+              <div class="singleNotice">
+                <div class="circle grey"></div>
+                <div class="about">
+                  <div class="title">Completed the task</div>
+                  <div class="time">10 minutes ago</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="noticeWrap">
         <div class="noticeHolder" (click)="notificationsReverse()">
           <img src="assets/images/Notifications.png" alt="alt">
           <div class="alertRed">5</div>
@@ -58,6 +92,7 @@
             <div class="text">NOTIFICATIONS</div>
             <div class="total">New 5</div>
           </div>
+
           <div class="noticeList">
             <div class="singleNotice">
               <div class="circle red"></div>
@@ -82,9 +117,10 @@
                 <div class="time">10 minutes ago</div>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+      </div>-->
 
       <div class="messageWrap">
         <img src="assets/images/Message.png" alt="alt">

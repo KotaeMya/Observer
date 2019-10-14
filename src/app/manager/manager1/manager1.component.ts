@@ -116,7 +116,7 @@ export class Manager1Component implements OnInit, OnDestroy {
       {
         video1: 'assets/images/videoPreview.png',
         video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
+        date: new Date('11/13/2019'), // mm/dd/yy
         operator: 'Иванов И.И.',
         camera: 1,
         greeting: true,
@@ -129,7 +129,7 @@ export class Manager1Component implements OnInit, OnDestroy {
       {
         video1: 'assets/images/videoPreview.png',
         video2: 'assets/images/videoPreview.png',
-        date: '12.12.12',
+        date: new Date('10/22/2019'), // mm/dd/yy
         operator: 'Иванов И.И.',
         camera: 1,
         greeting: true,
@@ -234,8 +234,7 @@ export class Manager1Component implements OnInit, OnDestroy {
     this.filtersKpi = !this.filtersKpi;
   }
 
-  sortByNewVideos() {
-    console.log('Sort');
+  sortByNewVideos(): void {
     this.videos.sort( (a, b) => {
       if (a.date < b.date) {
         return 1;

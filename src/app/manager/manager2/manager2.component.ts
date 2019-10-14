@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Manager2Component implements OnInit {
   data: any;
+  data1: any;
   options: any;
   constructor() { }
 
@@ -28,14 +29,25 @@ export class Manager2Component implements OnInit {
         }
       ]
     };
+    this.data1 = {
+      labels: [1, 2, 3, 4],
+      datasets: [
+        {
+          label: 'First Dataset',
+          data: [1, 12, 13, 5, 12, 13, 5, 12, 13, 5, 12, 13, 5],
+          fill: true,
+          borderColor: '#37b980'
+        }
+      ]
+    };
     this.options = {
       title: {
-        display: true,
-        text: 'My Title',
-        fontSize: 16
+        display: false,
+        text: '',
+        fontSize: 0
       },
       legend: {
-        position: 'bottom'
+        position: 'none'
       }
     };
   }
