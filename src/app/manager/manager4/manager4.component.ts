@@ -7,13 +7,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Manager4Component implements OnInit {
 
+  public fueler = {
+    status: true,
+    symbol: 'assets/images/plusIcon.png',
+    btn1: true,
+    btn2: false,
+    btn3: false,
+    btn4: false,
+    btn1Open: () => {
+      this.fueler.btn1 = !this.fueler.btn1;
+    },
+    btn2Open: () => {
+      this.fueler.btn2 = !this.fueler.btn2;
+    },
+    btn3Open: () => {
+      this.fueler.btn3 = !this.fueler.btn3;
+    },
+    btn4Open: () => {
+      this.fueler.btn4 = !this.fueler.btn4;
+    },
+    storeUhot: [
+      {
+
+      }
+    ]
+  };
   public operator = {
     status: false,
-    symbol: 'assets/images/plusIcon.png'
-  };
-  public fueler = {
-    status: false,
-    symbol: 'assets/images/plusIcon.png'
+    symbol: 'assets/images/plusIcon.png',
+    btn1: false,
+    btn2: false,
+    btn3: false,
+    btn4: false,
+    btn1Open: () => {
+      this.operator.btn1 = !this.operator.btn1;
+    },
+    btn2Open: () => {
+      this.operator.btn2 = !this.operator.btn2;
+    },
+    btn3Open: () => {
+      this.operator.btn3 = !this.operator.btn3;
+    },
+    btn4Open: () => {
+      this.operator.btn4 = !this.operator.btn4;
+    }
   };
   constructor() { }
 
@@ -29,7 +66,6 @@ export class Manager4Component implements OnInit {
       this.operator.symbol = 'assets/images/plusIcon.png';
     }
   }
-
   fuelerOpen() {
     this.fueler.status = !this.fueler.status;
 
@@ -39,4 +75,5 @@ export class Manager4Component implements OnInit {
       this.fueler.symbol = 'assets/images/plusIcon.png';
     }
   }
+
 }

@@ -45,10 +45,10 @@
             <div class="text">Заправщик</div>
           </div>
           <div class="selectDrop" *ngIf="fueler.status">
-            <div class="dropItem dropItemActive">uHOT</div>
-            <div class="dropItem">Безопасность</div>
-            <div class="dropItem">TLAG</div>
-            <div class="dropItem">МОшенничество с картой лояльности</div>
+            <div [ngClass]="{'dropItemActive': fueler.btn1}" class="dropItem " (click)="fueler.btn1Open()">uHOT</div>
+            <div [ngClass]="{'dropItemActive': fueler.btn2}" class="dropItem" (click)="fueler.btn2Open()">Безопасность</div>
+            <div [ngClass]="{'dropItemActive': fueler.btn3}" class="dropItem" (click)="fueler.btn3Open()">TLAG</div>
+            <div [ngClass]="{'dropItemActive': fueler.btn4}" class="dropItem" (click)="fueler.btn4Open()">Мошенничество с картой лояльности</div>
           </div>
         </div>
         <div class="singleSelect">
@@ -57,10 +57,10 @@
             <div class="text">Оператор</div>
           </div>
           <div class="selectDrop" *ngIf="operator.status">
-            <div class="dropItem dropItemActive">uHOT</div>
-            <div class="dropItem">Безопасность</div>
-            <div class="dropItem">TLAG</div>
-            <div class="dropItem">МОшенничество с картой лояльности</div>
+            <div [ngClass]="{'dropItemActive': operator.btn1}" class="dropItem dropItemActive" (click)="operator.btn1Open()">uHOT</div>
+            <div [ngClass]="{'dropItemActive': operator.btn2}" class="dropItem" (click)="operator.btn2Open()">Безопасность</div>
+            <div [ngClass]="{'dropItemActive': operator.btn3}" class="dropItem" (click)="operator.btn3Open()">TLAG</div>
+            <div [ngClass]="{'dropItemActive': operator.btn4}" class="dropItem" (click)="operator.btn4Open()">Мошенничество с картой лояльности</div>
           </div>
         </div>
       </div>

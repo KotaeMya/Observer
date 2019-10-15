@@ -30,11 +30,13 @@
         </div>
 
         <div class="progressBar">
-          <div class="progress" style="width: 95%"></div>
+          <ngb-progressbar height="2px" type="success" [value]="77"></ngb-progressbar>
+          <!--<div class="progress" style="width: 95%"></div>-->
         </div>
 
         <div class="numsWrap">
-          <img *ngIf="item.arrow" [src]="item.arrow" alt="alt">
+          <img *ngIf="item.arrow" src="assets/images/greenArrow.png" alt="alt">
+          <img *ngIf="!item.arrow" src="assets/images/redArrow.png" alt="alt">
           <div class="num">{{item.percent}}%</div>
         </div>
       </div>

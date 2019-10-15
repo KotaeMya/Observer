@@ -39,67 +39,20 @@
       </div>
 
       <table>
-        <tr>
-          <td class="id">1</td>
+        <tr *ngFor="let item of stationStatistics">
+          <td class="id">{{item.id}}</td>
           <td>
             <div class="graf">
-              <img src="assets/images/greenArrow.png" alt="alt">
+              <img *ngIf="item.up" src="assets/images/greenArrow.png" alt="alt">
               <div class="num">8</div>
+              <img *ngIf="!item.up"  src="assets/images/redArrow.png" alt="alt">
             </div>
           </td>
-          <td>33086</td>
-          <td>VOLCHANSKAYA</td>
+          <td>{{item.stationNum}}</td>
+          <td>{{item.name}}</td>
           <td>
             <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">2</td>
-          <td>
-            <div class="graf">
-              <img src="assets/images/greenArrow.png" alt="alt">
-              <div class="num">8</div>
-            </div>
-          </td>
-          <td>33086</td>
-          <td>VOLCHANSKAYA</td>
-          <td>
-            <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">3</td>
-          <td>
-            <div class="graf">
-              <div class="num">8</div>
-              <img src="assets/images/redArrow.png" alt="alt">
-            </div>
-          </td>
-          <td>33086</td>
-          <td>VOLCHANSKAYA</td>
-          <td>
-            <div class="perc red">43%
-              <div class="sup red">-4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">4</td>
-          <td>
-            <div class="graf">
-              <div class="num">8</div>
-              <img src="assets/images/redArrow.png" alt="alt">
-            </div>
-          </td>
-          <td>33086</td>
-          <td>VOLCHANSKAYA</td>
-          <td>
-            <div class="perc red">40%
-              <div class="sup red">-4%</div>
+              <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
             </div>
           </td>
         </tr>
