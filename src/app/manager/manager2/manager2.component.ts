@@ -9,9 +9,22 @@ export class Manager2Component implements OnInit {
   data: any;
   data1: any;
   options: any;
+
+  uhot = [];
+
+  multiTabs = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.chartsInit();
+    this.chartsOptions();
+
+    this.uhotInit();
+    this.multiTabsInit();
+  }
+
+  chartsInit(): void {
     this.data = {
       labels: ['0.0', 'π/2', 'π', '3π/2'],
       datasets: [
@@ -40,6 +53,8 @@ export class Manager2Component implements OnInit {
         }
       ]
     };
+  }
+  chartsOptions(): void {
     this.options = {
       title: {
         display: false,
@@ -50,6 +65,115 @@ export class Manager2Component implements OnInit {
         position: 'none'
       }
     };
+  }
+
+  uhotInit(): void {
+    this.uhot = [
+      {
+        title: 'Установка визуального контакта',
+        percent: 95,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      },
+      {
+        title: 'Приветствие клиента',
+        percent: 95,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      },
+      {
+        title: 'Федеральная акция',
+        percent: 43,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      },
+      {
+        title: 'Озвучить клиенту вид топлива, количество литров',
+        percent: 95,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      },
+      {
+        title: 'Озвучить клиенту вид топлива, количество литров',
+        percent: 78,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      },
+      {
+        title: 'Приветствие клиента',
+        percent: 95,
+        data: this.data1,
+        options: this.options,
+        red: false,
+        blue: false
+      }
+    ];
+
+    this.uhot.forEach( item => {
+        if (item.percent < 50) {
+          item.red = true;
+        } else if (item.percent >= 50 && item.percent <= 80) {
+          item.blue = true;
+        }
+      }
+    );
+  }
+
+  multiTabsInit(): void {
+    this.multiTabs = [
+      {
+        title: 'Общий KPI',
+        icon: 'assets/images/multiIco1.png',
+        percent: 95,
+        arrow: 'assets/images/redArrow.png',
+        active: false
+      },
+      {
+        title: 'UHOT',
+        icon: 'assets/images/multiIco2.png',
+        percent: 95,
+        arrow: 'assets/images/redArrow.png',
+        active: true
+      },
+      {
+        title: 'Безопасность',
+        icon: 'assets/images/multiIco3.png',
+        percent: 95,
+        arrow: 'assets/images/greenArrow.png',
+        active: false
+      },
+      {
+        title: 'TLAG',
+        icon: 'assets/images/multiIco4.png',
+        percent: 95,
+        arrow: '',
+        active: false
+      },
+      {
+        title: 'Мошенничество с картой лояльности',
+        icon: 'assets/images/multiIco5.png',
+        percent: 100,
+        arrow: '',
+        active: false
+      },
+      {
+        title: 'Ночная процедура',
+        icon: 'assets/images/multiIco6.png',
+        percent: 100,
+        arrow: '',
+        active: false
+      }
+    ];
   }
 
 }
