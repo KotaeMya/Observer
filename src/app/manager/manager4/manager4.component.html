@@ -22,7 +22,7 @@
   <!--  inner tab  -->
 
   <div class="innerTab innerTab4">
-    <div [ngClass]="{'topPlate': true}" class="topPlate">
+    <div class="topPlate">
       <div *ngFor="let item of messages | slice: 0 : 3; let i = index" class="singlePlate">
         <img (click)="deleteMessage(i)" src="assets/images/closePlate.png" alt="alt" class="closePlate">
         <div class="text">{{item.title}}</div>
