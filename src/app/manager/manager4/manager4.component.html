@@ -22,18 +22,10 @@
   <!--  inner tab  -->
 
   <div class="innerTab innerTab4">
-    <div class="topPlate">
-      <div class="singlePlate">
-        <img src="assets/images/closePlate.png" alt="alt" class="closePlate">
-        <div class="text">Добавлен новый KPI – <br>«Проверка полноты полки» ></div>
-      </div>
-      <div class="singlePlate">
-        <img src="assets/images/closePlate.png" alt="alt" class="closePlate">
-        <div class="text">Изменён вес показателя<br>«Федеральная акция» ></div>
-      </div>
-      <div class="singlePlate">
-        <img src="assets/images/closePlate.png" alt="alt" class="closePlate">
-        <div class="text">В показателе «Предложить сопутствующий товар»<br>использовать фразу «Попробуйте наш прекрасный<br>кофе» ></div>
+    <div [ngClass]="{'topPlate': true}" class="topPlate">
+      <div *ngFor="let item of messages | slice: 0 : 3; let i = index" class="singlePlate">
+        <img (click)="deleteMessage(i)" src="assets/images/closePlate.png" alt="alt" class="closePlate">
+        <div class="text">{{item.title}}</div>
       </div>
     </div>
 

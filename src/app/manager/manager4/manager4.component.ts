@@ -52,9 +52,25 @@ export class Manager4Component implements OnInit {
       this.operator.btn4 = !this.operator.btn4;
     }
   };
+
+  public messages = [];
   constructor() { }
 
   ngOnInit() {
+    this.messages = [
+      {
+        title: 'ДОБАВЛЕН НОВЫЙ KPI – «ПРОВЕРКА ПОЛНОТЫ ПОЛКИ» >'
+      },
+      {
+        title: 'ИЗМЕНЁН ВЕС ПОКАЗАТЕЛЯ «ФЕДЕРАЛЬНАЯ АКЦИЯ» >'
+      },
+      {
+        title: 'В ПОКАЗАТЕЛЕ «ПРЕДЛОЖИТЬ СОПУТСТВУЮЩИЙ ТОВАР» ИСПОЛЬЗОВАТЬ ФРАЗУ «ПОПРОБУЙТЕ НАШ ПРЕКРАСНЫЙ\nКОФЕ» >'
+      },
+      {
+        title: 'ИЗМЕНЁН ВЕС ПОКАЗАТЕЛЯ «ФЕДЕРАЛЬНАЯ АКЦИЯ» >'
+      }
+    ];
   }
 
   operatorOpen() {
@@ -74,6 +90,9 @@ export class Manager4Component implements OnInit {
     } else {
       this.fueler.symbol = 'assets/images/plusIcon.png';
     }
+  }
+  deleteMessage(index): void {
+    this.messages.splice(index, 1);
   }
 
 }

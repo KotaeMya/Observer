@@ -43,63 +43,19 @@
       </div>
 
       <table class="territorialTable1">
-        <tr>
-          <td class="id">1</td>
+        <tr *ngFor="let item of territorialMenagerTable">
+          <td class="id">{{item.id}}</td>
           <td>
             <div class="graf">
-              <img src="assets/images/greenArrow.png" alt="alt">
+              <img *ngIf="item.up" src="assets/images/greenArrow.png" alt="alt">
               <div class="num">8</div>
+              <img *ngIf="!item.up"  src="assets/images/redArrow.png" alt="alt">
             </div>
           </td>
-          <td>Иконникова Елена</td>
+          <td>{{item.name}}</td>
           <td>
-            <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">2</td>
-          <td>
-            <div class="graf">
-              <img src="assets/images/greenArrow.png" alt="alt">
-              <div class="num">8</div>
-            </div>
-          </td>
-          <td>Иконникова Елена</td>
-          <td>
-            <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">3</td>
-          <td>
-            <div class="graf">
-              <div class="num">8</div>
-              <img src="assets/images/redArrow.png" alt="alt">
-            </div>
-          </td>
-          <td>Иконникова Елена</td>
-          <td>
-            <div class="perc red">43%
-              <div class="sup red">-4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="id">4</td>
-          <td>
-            <div class="graf">
-              <div class="num">8</div>
-              <img src="assets/images/redArrow.png" alt="alt">
-            </div>
-          </td>
-          <td>Иконникова Елена</td>
-          <td>
-            <div class="perc red">40%
-              <div class="sup red">-4%</div>
+            <div class="perc">{{item.percent}}%
+              <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
             </div>
           </td>
         </tr>
@@ -120,27 +76,11 @@
       </div>
 
       <table class="territorialTable2">
-        <tr>
-          <td>MARIY NAFTA</td>
+        <tr *ngFor="let item of retailerTable">
+          <td>{{item.name}}</td>
           <td>
-            <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>MARIY NAFTA</td>
-          <td>
-            <div class="perc">95%
-              <div class="sup green">+4%</div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>MARIY NAFTA</td>
-          <td>
-            <div class="perc red">43%
-              <div class="sup red">-4%</div>
+            <div [ngClass]="{'red': !item.up}" class="perc">{{item.percent}}%
+              <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
             </div>
           </td>
         </tr>

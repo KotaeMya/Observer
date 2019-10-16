@@ -8,6 +8,9 @@ import { TerritorialRoutingModule } from './territorial-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
 import { Territorial4Component } from './territorial4/territorial4.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartModule } from 'primeng/chart';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { Territorial4Component } from './territorial4/territorial4.component';
   imports: [
     CommonModule,
     TerritorialRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
+    ChartModule
   ]
 })
 export class TerritorialModule { }

@@ -116,8 +116,8 @@
   border-bottom: 1px solid #e9eaeb; }
 .innerTab .tableWrap table tr:nth-child(odd) {
   background: #f3f7f9; }
-.innerTab .tableWrap table tr td {
-  padding: 20px 0; }
+/*.innerTab .tableWrap table tr td {
+  padding: 20px 0; }*/
 .innerTab .tableWrap table tr td:nth-child(1) {
   width: 8%;
   text-align: center; }
@@ -411,7 +411,7 @@ MULTI INNER
 .multiInner .tableWrap table tr:nth-child(odd) {
   background: #f3f7f9; }
 .multiInner .tableWrap table tr td {
-  padding: 20px 0; }
+  padding-top: 10px; }
 .multiInner .tableWrap table tr td:nth-child(1) {
   width: 68%;
   padding-left: 30px;
@@ -443,7 +443,7 @@ MULTI INNER
 .multiInner .curveWrap .title {
   text-transform: uppercase;
   height: 40px;
-  margin-bottom: 33px;
+  margin-bottom: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

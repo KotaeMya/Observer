@@ -47,8 +47,7 @@ export class Manager3Component implements OnInit {
         name: 'VOLCHANSKAYA',
         percent: 43,
         supPercent: -4
-      },
-
+      }
     ];
   }
 

@@ -38,91 +38,21 @@
   <div class="innerTab innerTab2">
 
     <div class="multiTabsWrap">
-      <div class="multiTab">
+      <div [ngClass]="{'multiTabActive': item.active}" class="multiTab" *ngFor="let item of multiTabs">
         <div class="top">
-          <img src="assets/images/multiIco1.png" alt="alt">
-          <div class="text">Общий KPI</div>
+          <img [src]="item.icon" alt="alt">
+          <div class="text">{{item.title}}</div>
         </div>
 
         <div class="progressBar">
-          <div class="progress" style="width: 95%"></div>
+          <ngb-progressbar height="2px" type="success" [value]="77"></ngb-progressbar>
+          <!--<div class="progress" style="width: 95%"></div>-->
         </div>
 
         <div class="numsWrap">
-          <img src="assets/images/redArrow.png" alt="alt">
-          <div class="num">95%</div>
-        </div>
-      </div>
-      <div class="multiTab multiTabActive">
-        <div class="top">
-          <img src="assets/images/multiIco2.png" alt="alt">
-          <div class="text">UHOT</div>
-        </div>
-
-        <div class="progressBar">
-          <div class="progress" style="width: 95%"></div>
-        </div>
-
-        <div class="numsWrap">
-          <img src="assets/images/redArrow.png" alt="alt">
-          <div class="num">95%</div>
-        </div>
-      </div>
-      <div class="multiTab">
-        <div class="top">
-          <img src="assets/images/multiIco3.png" alt="alt">
-          <div class="text">Безопасность</div>
-        </div>
-
-        <div class="progressBar">
-          <div class="progress" style="width: 95%"></div>
-        </div>
-
-        <div class="numsWrap">
-          <img src="assets/images/greenArrow.png" alt="alt">
-          <div class="num">95%</div>
-        </div>
-      </div>
-      <div class="multiTab">
-        <div class="top">
-          <img src="assets/images/multiIco4.png" alt="alt">
-          <div class="text">TLAG</div>
-        </div>
-
-        <div class="progressBar">
-          <div class="progress" style="width: 100%"></div>
-        </div>
-
-        <div class="numsWrap">
-          <div class="num">100%</div>
-        </div>
-      </div>
-      <div class="multiTab">
-        <div class="top">
-          <img src="assets/images/multiIco5.png" alt="alt">
-          <div class="text">мошенничество с картой лояльности</div>
-        </div>
-
-        <div class="progressBar">
-          <div class="progress" style="width: 100%"></div>
-        </div>
-
-        <div class="numsWrap">
-          <div class="num">100%</div>
-        </div>
-      </div>
-      <div class="multiTab">
-        <div class="top">
-          <img src="assets/images/multiIco6.png" alt="alt">
-          <div class="text">Ночная процедура</div>
-        </div>
-
-        <div class="progressBar">
-          <div class="progress" style="width: 100%"></div>
-        </div>
-
-        <div class="numsWrap">
-          <div class="num">100%</div>
+          <img *ngIf="item.arrow" src="assets/images/greenArrow.png" alt="alt">
+          <img *ngIf="!item.arrow" src="assets/images/redArrow.png" alt="alt">
+          <div class="num">{{item.percent}}%</div>
         </div>
       </div>
     </div>
@@ -141,53 +71,18 @@
         </div>
 
         <table>
-          <tr>
-            <td>Установка визуального контакта</td>
-            <td>95%</td>
+          <tr *ngFor="let item of uhot">
+            <td>{{item.title}}</td>
+            <td [ngClass]="{'red': item.red, 'blue': item.blue}">{{item.percent}}%</td>
             <td>
-              <img src="assets/images/greenCurve.png" alt="alt">
-            </td>
-          </tr>
-          <tr>
-            <td>Приветствие клиента</td>
-            <td>95%</td>
-            <td>
-              <img src="assets/images/greenCurve.png" alt="alt">
-            </td>
-          </tr>
-          <tr>
-            <td>Федеральная акция</td>
-            <td class="red">43%</td>
-            <td>
-              <img src="assets/images/redCurve.png" alt="alt">
-            </td>
-          </tr>
-          <tr>
-            <td>Озвучить клиенту вид топлива, количество литров</td>
-            <td>95%</td>
-            <td>
-              <img src="assets/images/greenCurve.png" alt="alt">
-            </td>
-          </tr>
-          <tr>
-            <td>Предложить сопутствующий товар (кофе, закуски и т.д.)</td>
-            <td class="blue">78%</td>
-            <td>
-              <img src="assets/images/blueCurve.png" alt="alt">
-            </td>
-          </tr>
-          <tr>
-            <td>Приветствие клиента</td>
-            <td>95%</td>
-            <td>
-              <img src="assets/images/greenCurve.png" alt="alt">
+              <p-chart width="147px" height="60px" type="line" [data]="item.data" [options]="item.options"></p-chart>
             </td>
           </tr>
         </table>
 
         <div class="curveWrap">
           <div class="title">График</div>
-          <img src="assets/images/bigCurve.png" alt="alt">
+          <p-chart type="line" [data]="data"></p-chart>
           <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed metus lacinia, molestie felis sit amet, tristique nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tellus gravida massa condimentum, sit amet elementum orci dapibus.</div>
         </div>
       </div>
@@ -207,44 +102,12 @@
           </div>
         </div>
 
-        <table>
-          <tr>
-            <td>MARIY NAFTA</td>
+        <table class="territorialTable2">
+          <tr *ngFor="let item of retailerTable">
+            <td>{{item.name}}</td>
             <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MARIY NAFTA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MARIY NAFTA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MARIY NAFTA</td>
-            <td>
-              <div class="perc red">43%
-                <div class="sup red">-4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MARIY NAFTA</td>
-            <td>
-              <div class="perc red">43%
-                <div class="sup red">-4%</div>
+              <div [ngClass]="{'red': !item.up}" class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
