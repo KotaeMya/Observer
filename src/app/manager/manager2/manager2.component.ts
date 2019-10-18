@@ -134,42 +134,42 @@ export class Manager2Component implements OnInit {
       {
         title: 'Общий KPI',
         icon: 'assets/images/multiIco1.png',
-        percent: 95,
+        percent: 44,
         arrow: true,
         active: false
       },
       {
         title: 'UHOT',
         icon: 'assets/images/multiIco2.png',
-        percent: 95,
+        percent: 22,
         arrow: true,
         active: true
       },
       {
         title: 'Безопасность',
         icon: 'assets/images/multiIco3.png',
-        percent: 95,
+        percent: 66,
         arrow: false,
         active: false
       },
       {
         title: 'TLAG',
         icon: 'assets/images/multiIco4.png',
-        percent: 95,
+        percent: 77,
         arrow: false,
         active: false
       },
       {
         title: 'Мошенничество с картой лояльности',
         icon: 'assets/images/multiIco5.png',
-        percent: 100,
+        percent: 68,
         arrow: true,
         active: false
       },
       {
         title: 'Ночная процедура',
         icon: 'assets/images/multiIco6.png',
-        percent: 100,
+        percent: 99,
         arrow: true,
         active: false
       }

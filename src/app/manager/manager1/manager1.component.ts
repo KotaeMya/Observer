@@ -187,12 +187,14 @@ export class Manager1Component implements OnInit, OnDestroy {
 
   watchedVideo(item, index): void {
     // проигрывается видео
-    this.newVideos.splice(index, 1);
-    this.videos = this.newVideos;
-    this.watchedVideos.push(item);
-    item.watched = true;
+    if (!item.watched) {
+      this.newVideos.splice(index, 1);
+      this.videos = this.newVideos;
+      this.watchedVideos.push(item);
+      item.watched = true;
 
-    this.amountNewVideos();
+      this.amountNewVideos();
+    }
   }
 
   favoriteVideosShow(): void {

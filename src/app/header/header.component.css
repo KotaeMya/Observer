@@ -111,7 +111,6 @@ MAIN
   position: relative;
   margin-right: 29px; }
 .header .menu .menuHolder .langWrap .current {
-  margin-right: 10px;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -149,6 +148,8 @@ MAIN
   border: 2px solid #fff;
   background: #4db894; }
 .header .menu .menuHolder .userWrap .userDrop {
+  margin-top: 24px;
+  margin-left: -60px;
   top: 56px; }
 .header .menu .menuHolder .userWrap .userDrop .line {
   height: 1px;
@@ -189,6 +190,8 @@ MAIN
   font-size: 10px;
   background: #dd1d21; }
 .header .menu .menuHolder .noticeWrap .noticeDrop {
+  margin-top: 33px;
+  margin-left: -150px;
   padding: 0;
   width: 360px; }
 .header .menu .menuHolder .noticeWrap .noticeDrop .mainTitle {
@@ -272,3 +275,14 @@ MAIN
   cursor: pointer; }
 .header .menu .menuHolder .chatWrap img {
   margin-top: 2px; }
+
+.btn-right {
+  margin-right: 10px; }
+.langDrop {
+  margin-left: -48px;
+  margin-top: 28px; }
+/*
+.dropup .dropdown-toggle::after {
+  display: none;
+}
+*/

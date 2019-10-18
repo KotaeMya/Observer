@@ -11,9 +11,9 @@
     </div>
 
     <div class="menuHolder">
-      <div class="langWrap" ngbDropdown>
+      <div class="langWrap" ngbDropdown  display="dynamic" placement="bottom">
         <div class="current" ngbDropdownToggle>
-          <div class="current">English</div>
+          <div class="btn-right">English</div>
           <img  src="assets/images/arrowDown.png" alt="alt">
         </div>
 
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="userWrap" ngbDropdown>
+      <div class="userWrap" ngbDropdown display="dynamic" placement="bottom">
         <div class="avaWrap" ngbDropdownToggle>
           <img src="assets/images/user.png" alt="alt">
           <div class="online"></div>
@@ -41,13 +41,13 @@
         </div>
       </div>
 
-      <div class="noticeWrap" ngbDropdown>
+      <div class="noticeWrap" ngbDropdown  display="dynamic" placement="bottom">
         <div class="noticeHolder" ngbDropdownToggle>
           <img src="assets/images/Notifications.png" alt="alt">
           <div class="alertRed">5</div>
         </div>
 
-          <div style="transform: translate(-348px, 106px)!important;" class="dropWrap noticeDrop" ngbDropdownMenu>
+          <div class="dropWrap noticeDrop" ngbDropdownMenu>
             <div class="mainTitle">
               <div class="text">NOTIFICATIONS</div>
               <div class="total">New 5</div>
@@ -80,47 +80,6 @@
           </div>
         </div>
       </div>
-
-      <!--<div class="noticeWrap">
-        <div class="noticeHolder" (click)="notificationsReverse()">
-          <img src="assets/images/Notifications.png" alt="alt">
-          <div class="alertRed">5</div>
-        </div>
-
-        <div class="dropWrap noticeDrop" *ngIf="notifications">
-          <div class="mainTitle">
-            <div class="text">NOTIFICATIONS</div>
-            <div class="total">New 5</div>
-          </div>
-
-          <div class="noticeList">
-            <div class="singleNotice">
-              <div class="circle red"></div>
-              <div class="about">
-                <div class="title">New order has been placed.</div>
-                <div class="time">10 minutes ago</div>
-              </div>
-            </div>
-
-            <div class="singleNotice">
-              <div class="circle green"></div>
-              <div class="about">
-                <div class="title">Completed the task</div>
-                <div class="time">10 minutes ago</div>
-              </div>
-            </div>
-
-            <div class="singleNotice">
-              <div class="circle grey"></div>
-              <div class="about">
-                <div class="title">Completed the task</div>
-                <div class="time">10 minutes ago</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>-->
 
       <div class="messageWrap">
         <img src="assets/images/Message.png" alt="alt">
