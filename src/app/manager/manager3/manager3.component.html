@@ -44,15 +44,15 @@
           <td>
             <div class="graf">
               <img *ngIf="item.up" src="assets/images/greenArrow.png" alt="alt">
-              <div class="num">8</div>
+              <div class="num">{{item.num}}</div>
               <img *ngIf="!item.up"  src="assets/images/redArrow.png" alt="alt">
             </div>
           </td>
           <td>{{item.stationNum}}</td>
           <td>{{item.name}}</td>
           <td>
-            <div class="perc">95%
-              <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
+            <div class="perc">{{item.percent}}%
+              <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
             </div>
           </td>
         </tr>

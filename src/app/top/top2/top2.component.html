@@ -3,21 +3,7 @@
 
   <!--  date inputs  -->
 
-  <div class="dateInputsWrap">
-    <div class="dateInput">
-      <div class="calendal">
-        <img src="assets/images/calendar.png" alt="alt">
-      </div>
-      <input type="text" placeholder="25/06/2019">
-    </div>
-    <div class="sep">—</div>
-    <div class="dateInput">
-      <div class="calendal">
-        <img src="assets/images/calendar.png" alt="alt">
-      </div>
-      <input type="text" placeholder="25/06/2019">
-    </div>
-  </div>
+  <app-date-inputs></app-date-inputs>
 
   <!--  /date inputs  -->
 
@@ -51,140 +37,46 @@
     <div class="tables3InRow">
 
       <div class="allTablesWrap">
-        <div class="tableNameAll">TOP 3 тер.менеджеров</div>
+        <div class="tableNameAll">TOP 3 тер. менеджеров</div>
 
         <table class="tableTypes tableTypeA">
-          <tr>
-            <td>1</td>
-            <td>Иконникова Елена</td>
+          <tr *ngFor="let item of topManagers">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
             <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Иконникова Елена</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Иконникова Елена</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
         </table>
       </div>
+
       <div class="allTablesWrap">
         <div class="tableNameAll">TOP 5 ритейлеров</div>
-
         <table class="tableTypes tableTypeA">
-          <tr>
-            <td>1</td>
-            <td>ETALON</td>
+          <tr *ngFor="let item of topRetailers">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
             <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
         </table>
       </div>
+
       <div class="allTablesWrap">
         <div class="tableNameAll">TOP 5 станций</div>
-
         <table class="tableTypes tableTypeB">
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
+          <tr *ngFor="let item of topStations">
+            <td>{{item.id}}</td>
+            <td>{{item.num}}</td>
+            <td>{{item.name}}</td>
             <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
@@ -199,30 +91,12 @@
         <div class="tableNameAll">bottom 3 тер.менеджеров</div>
 
         <table class="tableTypes tableTypeA">
-          <tr>
-            <td>1</td>
-            <td>Иконникова Елена</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Иконникова Елена</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Иконникова Елена</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
+          <tr *ngFor="let item of bottomManagers">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
@@ -232,48 +106,12 @@
         <div class="tableNameAll">bottom 5 ритейлеров</div>
 
         <table class="tableTypes tableTypeA">
-          <tr>
-            <td>1</td>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
+          <tr *ngFor="let item of bottomRetailers">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
@@ -283,53 +121,13 @@
         <div class="tableNameAll">bottom 5 станций</div>
 
         <table class="tableTypes tableTypeB">
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>33086</td>
-            <td>VOLCHANSKAYA</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
+          <tr *ngFor="let item of bottomStations">
+            <td>{{item.id}}</td>
+            <td>{{item.num}}</td>
+            <td>{{item.name}}</td>
+            <td>
+              <div class="perc">{{item.percent}}%
+                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup"><span *ngIf="item.up">+</span>{{item.supPercent}}%</div>
               </div>
             </td>
           </tr>
@@ -365,51 +163,6 @@
               </div>
             </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>
-              <div class="graf">
-                <img src="assets/images/greenArrow.png" alt="alt">
-                <div class="num">8</div>
-              </div>
-            </td>
-            <td>Иконникова Елена</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>
-              <div class="graf">
-                <div class="num">8</div>
-                <img src="assets/images/redArrow.png" alt="alt">
-              </div>
-            </td>
-            <td>Иконникова Елена</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>
-              <div class="graf">
-                <div class="num">8</div>
-                <img src="assets/images/redArrow.png" alt="alt">
-              </div>
-            </td>
-            <td>Иконникова Елена</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
         </table>
       </div>
 
@@ -433,46 +186,6 @@
         </div>
 
         <table class="tableTypes tableTypeD">
-          <tr>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>ETALON</td>
-            <td class="red">
-              <div class="perc">95%
-                <div class="sup">+4%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>ETALON</td>
-            <td>
-              <div class="perc">95%
-                <div class="sup green">+4%</div>
-              </div>
-            </td>
-          </tr>
           <tr>
             <td>ETALON</td>
             <td>

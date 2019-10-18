@@ -1,11 +1,9 @@
-
 .mainWrap {
   width: -webkit-calc(100% - 290px);
   width: calc(100% - 290px);
   margin-left: 290px;
   padding-right: 30px;
   padding-top: 31px; }
-
 .dateInputsWrap {
   display: -webkit-box;
   display: -webkit-flex;
@@ -59,7 +57,6 @@
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   padding: 0 14px; }
-
 
 .innerTab {
   width: 100%;
@@ -194,7 +191,6 @@
   color: #a3afb7;
   line-height: 1; }
 
-
 /*
 
 MULTI INNER
@@ -298,7 +294,7 @@ MULTI INNER
 .multiInner .curveWrap .title {
   text-transform: uppercase;
   height: 40px;
-  margin-bottom: 33px;
+  margin-bottom: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

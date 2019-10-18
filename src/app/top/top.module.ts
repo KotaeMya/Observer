@@ -6,6 +6,8 @@ import { Top2Component } from './top2/top2.component';
 import { TopRoutingModule } from './top-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MainTabsComponent } from './main-tabs/main-tabs.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MainTabsComponent } from './main-tabs/main-tabs.component';
   imports: [
     CommonModule,
     TopRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
+    ChartModule
   ]
 })
 export class TopModule { }

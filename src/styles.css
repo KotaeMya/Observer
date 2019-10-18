@@ -28,7 +28,7 @@ img, a {
 .clearFix {
   clear: both; }
 
- /*ngb-pagination*/
+/*ngb-pagination*/
 ngb-pagination .page-item.active .page-link {
   background-color: #37474f;
   color: #ffffff;
@@ -50,7 +50,7 @@ ngb-pagination .page-link {
 ngb-pagination .page-item:last-child .page-link {
   margin-right: 0;
   margin-left: 0; }
-  /*ngb-pagination*/
+/*ngb-pagination*/
 
 .text{
   line-height: 14px; }
