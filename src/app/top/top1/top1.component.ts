@@ -14,6 +14,14 @@ export class Top1Component implements OnInit {
   multiTabs = [];
   uhot = [];
 
+  count = 1;
+
+  btn1 = true;
+  btn2 = false;
+  btn3 = false;
+  btn4 = false;
+  btn5 = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -197,5 +205,63 @@ export class Top1Component implements OnInit {
         }
       }
     );
+  }
+
+  tabSet(numberTab: number): void {
+    this.count = numberTab;
+
+    switch (numberTab) {
+      case 1: {
+        this.btn1 = true;
+        this.btn2 = false;
+        this.btn3 = false;
+        this.btn4 = false;
+        this.btn5 = false;
+      } return;
+
+      case 2: {
+        this.btn1 = false;
+        this.btn2 = true;
+        this.btn3 = false;
+        this.btn4 = false;
+        this.btn5 = false;
+
+      } return;
+
+      case 3: {
+        this.btn1 = false;
+        this.btn2 = false;
+        this.btn3 = true;
+        this.btn4 = false;
+        this.btn5 = false;
+
+      } return;
+
+      case 4: {
+        this.btn1 = false;
+        this.btn2 = false;
+        this.btn3 = false;
+        this.btn4 = true;
+        this.btn5 = false;
+
+      } return;
+
+      case 5: {
+        this.btn1 = false;
+        this.btn2 = false;
+        this.btn3 = false;
+        this.btn4 = false;
+        this.btn5 = true;
+
+      } return;
+
+      default: {
+        this.btn1 = true;
+        this.btn2 = false;
+        this.btn3 = false;
+        this.btn4 = false;
+        this.btn5 = false;
+      } return;
+    }
   }
 }

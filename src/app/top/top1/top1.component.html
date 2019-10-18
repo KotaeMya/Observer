@@ -27,103 +27,119 @@
 
     <div class="head headTop1">
       <div class="videoTabsWrap">
-        <div class="videoTab active">Общие</div>
-        <div class="videoTab">Продажи</div>
-        <div class="videoTab">Общение с клиентом</div>
-        <div class="videoTab">Акции</div>
-        <div class="videoTab">Безопасность</div>
+        <div [ngClass]="{'active': btn1}" (click)="tabSet(1)" class="videoTab">Общие</div>
+        <div [ngClass]="{'active': btn2}" (click)="tabSet(2)" class="videoTab">Продажи</div>
+        <div [ngClass]="{'active': btn3}" (click)="tabSet(3)" class="videoTab">Общение с клиентом</div>
+        <div [ngClass]="{'active': btn4}" (click)="tabSet(4)" class="videoTab">Акции</div>
+        <div [ngClass]="{'active': btn5}" (click)="tabSet(5)" class="videoTab">Безопасность</div>
       </div>
     </div>
 
-    <div class="multiTabsWrap">
-      <div [ngClass]="{'multiTabActive': item.active}" class="multiTab" *ngFor="let item of multiTabs">
-        <div class="top">
-          <img [src]="item.icon" alt="alt">
-          <div class="text">{{item.title}}</div>
-        </div>
 
-        <div class="progressBar">
-          <ngb-progressbar height="2px" type="success" [value]="item.percent"></ngb-progressbar>
-          <!--<div class="progress" style="width: 95%"></div>-->
-        </div>
+    <div [ngSwitch]="count">
+      <ng-template ngSwitchCase="1">
+        <div class="multiTabsWrap">
+          <div [ngClass]="{'multiTabActive': item.active}" class="multiTab" *ngFor="let item of multiTabs">
+            <div class="top">
+              <img [src]="item.icon" alt="alt">
+              <div class="text">{{item.title}}</div>
+            </div>
 
-        <div class="numsWrap">
-          <img *ngIf="item.arrow" src="assets/images/greenArrow.png" alt="alt">
-          <img *ngIf="!item.arrow" src="assets/images/redArrow.png" alt="alt">
-          <div class="num">{{item.percent}}%</div>
-        </div>
-      </div>
-    </div>
+            <div class="progressBar">
+              <ngb-progressbar height="2px" type="success" [value]="item.percent"></ngb-progressbar>
+            </div>
 
-    <div class="multiInner territorial2Inner">
-      <div class="tableWrap">
-        <div class="head">
-          <div class="name"><img src="assets/images/arrowLeft.png" alt="alt">UHOT</div>
-
-          <div class="filtersWrap">
-            <div class="filter">
-              <div class="value">Заправщик</div>
-              <img src="assets/images/filterArrow.png" alt="alt">
+            <div class="numsWrap">
+              <img *ngIf="item.arrow" src="assets/images/greenArrow.png" alt="alt">
+              <img *ngIf="!item.arrow" src="assets/images/redArrow.png" alt="alt">
+              <div class="num">{{item.percent}}%</div>
             </div>
           </div>
         </div>
 
-        <table>
-          <tr *ngFor="let item of uhot">
-            <td>{{item.title}}</td>
-            <td [ngClass]="{'red': item.red, 'blue': item.blue}">{{item.percent}}%</td>
-            <td>
-              <p-chart width="147px" height="60px" type="line" [data]="item.data" [options]="item.options"></p-chart>
-            </td>
-          </tr>
-        </table>
+        <div class="multiInner territorial2Inner">
+          <div class="tableWrap">
+            <div class="head">
+              <div class="name"><img src="assets/images/arrowLeft.png" alt="alt">UHOT</div>
 
-        <div class="curveWrap">
-          <div class="title">График</div>
-          <p-chart type="line" [data]="data"></p-chart>
-          <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed metus lacinia, molestie felis sit amet, tristique nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tellus gravida massa condimentum, sit amet elementum orci dapibus.</div>
-        </div>
-      </div>
-
-      <div class="tableWrap">
-        <div class="head">
-          <div class="name"><img src="assets/images/arrowLeft.png" alt="alt">Ритейлеры</div>
-          <div class="filtersWrap">
-            <div class="filter">
-              <div class="value">KPI</div>
-              <img src="assets/images/filterArrow.png" alt="alt">
+              <div class="filtersWrap">
+                <div class="filter">
+                  <div class="value">Заправщик</div>
+                  <img src="assets/images/filterArrow.png" alt="alt">
+                </div>
+              </div>
             </div>
-            <div class="filter">
-              <div class="value">Оператор</div>
-              <img src="assets/images/filterArrow.png" alt="alt">
+
+            <table>
+              <tr *ngFor="let item of uhot">
+                <td>{{item.title}}</td>
+                <td [ngClass]="{'red': item.red, 'blue': item.blue}">{{item.percent}}%</td>
+                <td>
+                  <p-chart width="147px" height="60px" type="line" [data]="item.data" [options]="item.options"></p-chart>
+                </td>
+              </tr>
+            </table>
+
+            <div class="curveWrap">
+              <div class="title">График</div>
+              <p-chart type="line" [data]="data"></p-chart>
+              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed metus lacinia, molestie felis sit amet, tristique nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tellus gravida massa condimentum, sit amet elementum orci dapibus.</div>
             </div>
           </div>
+
+          <div class="tableWrap">
+            <div class="head">
+              <div class="name"><img src="assets/images/arrowLeft.png" alt="alt">Ритейлеры</div>
+              <div class="filtersWrap">
+                <div class="filter">
+                  <div class="value">KPI</div>
+                  <img src="assets/images/filterArrow.png" alt="alt">
+                </div>
+                <div class="filter">
+                  <div class="value">Оператор</div>
+                  <img src="assets/images/filterArrow.png" alt="alt">
+                </div>
+              </div>
+            </div>
+
+            <table class="territorialTable2">
+              <tr *ngFor="let item of retailerTable">
+                <td>{{item.name}}</td>
+                <td>
+                  <div [ngClass]="{'red': !item.up}" class="perc">{{item.percent}}%
+                    <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>MARIY NAFTA</td>
+                <td>
+                  <div class="perc red">40%
+                    <div class="sup red">-4%</div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+
+
         </div>
+      </ng-template>
 
-        <table class="territorialTable2">
-          <tr *ngFor="let item of retailerTable">
-            <td>{{item.name}}</td>
-            <td>
-              <div [ngClass]="{'red': !item.up}" class="perc">{{item.percent}}%
-                <div [ngClass]="{'green': item.up, 'red': !item.up}" class="sup">{{item.supPercent}}%</div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>MARIY NAFTA</td>
-            <td>
-              <div class="perc red">40%
-                <div class="sup red">-4%</div>
-              </div>
-            </td>
-          </tr>
-        </table>
-
-      </div>
-
-
+      <ng-template ngSwitchCase="2">
+        Template {{count}}
+      </ng-template>
+      <ng-template ngSwitchCase="3">
+        Template {{count}}
+      </ng-template>
+      <ng-template ngSwitchCase="4">
+        Template {{count}}
+      </ng-template>
+      <ng-template ngSwitchCase="5">
+        Template {{count}}
+      </ng-template>
     </div>
-
   </div>
 
   <!--  /inner tab  -->
