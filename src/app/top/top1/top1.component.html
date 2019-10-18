@@ -24,20 +24,16 @@
   <!--  inner tab  -->
 
   <div class="innerTab innerTab2 top1InnerTabs">
-
     <div class="head headTop1">
       <div class="videoTabsWrap">
-        <div [ngClass]="{'active': btn1}" (click)="tabSet(1)" class="videoTab">Общие</div>
-        <div [ngClass]="{'active': btn2}" (click)="tabSet(2)" class="videoTab">Продажи</div>
-        <div [ngClass]="{'active': btn3}" (click)="tabSet(3)" class="videoTab">Общение с клиентом</div>
-        <div [ngClass]="{'active': btn4}" (click)="tabSet(4)" class="videoTab">Акции</div>
-        <div [ngClass]="{'active': btn5}" (click)="tabSet(5)" class="videoTab">Безопасность</div>
+        <div class="videoTab" *ngFor="let item of tabMenu; let i = index" (click)="tabSet(i)" [ngClass]="pageTab === i  ? 'active' : 'nonACtive'">
+          {{item.name}}
+        </div>
       </div>
     </div>
 
-
-    <div [ngSwitch]="count">
-      <ng-template ngSwitchCase="1">
+    <div [ngSwitch]="pageTab">
+      <ng-template ngSwitchCase="0">
         <div class="multiTabsWrap">
           <div [ngClass]="{'multiTabActive': item.active}" class="multiTab" *ngFor="let item of multiTabs">
             <div class="top">
@@ -127,17 +123,17 @@
         </div>
       </ng-template>
 
+      <ng-template ngSwitchCase="1">
+        Template {{pageTab + 1}}
+      </ng-template>
       <ng-template ngSwitchCase="2">
-        Template {{count}}
+        Template {{pageTab + 1}}
       </ng-template>
       <ng-template ngSwitchCase="3">
-        Template {{count}}
+        Template {{pageTab + 1}}
       </ng-template>
       <ng-template ngSwitchCase="4">
-        Template {{count}}
-      </ng-template>
-      <ng-template ngSwitchCase="5">
-        Template {{count}}
+        Template {{pageTab + 1}}
       </ng-template>
     </div>
   </div>
